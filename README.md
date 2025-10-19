@@ -274,26 +274,15 @@ pathOptions={{
 
 ### Setup & Usage
 - [SETUP.md](./SETUP.md) - Detailed setup instructions
-- [QUICKSTART.md](./QUICKSTART.md) - 5-minute quick start guide
 - [Component README](./components/README.md) - Component API documentation
 
-### Feature Guides
-- [COLLISION_REPORTING_FEATURE.md](./COLLISION_REPORTING_FEATURE.md) - 🚨 Interactive collision reporting guide
-- [REV-SOLVE_FEATURE.md](./REV-SOLVE_FEATURE.md) - ✅ Removing collision reports
-- [SKATER_SLIDER_FEATURE.md](./SKATER_SLIDER_FEATURE.md) - 🛹 Custom time slider with Miss Rev
-- [UI_ENHANCEMENTS.md](./UI_ENHANCEMENTS.md) - 🎨 Final UI polish and improvements
-- [VISUAL_ENHANCEMENTS.md](./VISUAL_ENHANCEMENTS.md) - 📡 Banner, dark mode & slider icon improvements
-
 ### Technical Documentation
-- [ANIMATION_FIX_EXPLANATION.md](./ANIMATION_FIX_EXPLANATION.md) - ⚠️ Critical animation fix details
-- [CRITICAL_FIX_APPLIED.md](./CRITICAL_FIX_APPLIED.md) - Fix verification and checklist
-- [MISS_REV_AS_COLLISION_MARKER.md](./MISS_REV_AS_COLLISION_MARKER.md) - 🐶 Miss Rev positioning and hover effects
 - [React Leaflet Docs](https://react-leaflet.js.org/)
 - [Next.js Docs](https://nextjs.org/docs)
 
 ## 🤝 Contributing
 
-This is a HowdyHack project. Feel free to fork and modify for your own use!
+This is our HowdyHack 25' project. Feel free to fork and modify for your own use!
 
 ## 📝 License
 
