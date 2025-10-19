@@ -32,14 +32,19 @@ npm run dev
   - Dynamic time slots (50-min for MWF, 75-min for TTH)
   - Visual tic marks with 12-hour AM/PM format
   - Maroon/white gradient track
+- **🎨 Theme Selector**: Toggle between Normal and Dark Mode
+  - Reduces eye strain in low-light environments
+  - Inverted dark theme with smart UI preservation
 - **ℹ️ Info Button**: Accessible help modal with usage instructions
 - Real-time data filtering and updates
 
 ### 🎨 Visual Design
+- **📡 Reveille's Radar Banner**: Animated top banner with bounce entrance effect
 - **Pulsating Animation**: Hotspot markers pulse to indicate high-traffic areas
   - ⚠️ **Important**: Animation targets inner SVG `<path>` to avoid Leaflet positioning conflicts
 - **Dynamic Sizing**: Hotspot size scales with congestion level
-- **Color Coding**: Green for buildings, red for congestion alerts
+- **Color Coding**: Green for buildings, red for congestion alerts, orange for collision reports
+- **Theme Support**: Normal (light) and Dark Mode themes
 - **Responsive UI**: Works on desktop and mobile devices
 
 ### 🗺️ Map Features
@@ -132,13 +137,14 @@ Simply open the application and use the controls to filter by day and time. The 
 
 ### Interacting with the Map
 1. **Get Help**: Click the ℹ️ info button (top left) for detailed instructions
-2. **Select Day**: Use the day dropdown in the control panel
-3. **Navigate Time**: Use the Skater-Slider to slide through time slots (Miss Rev moves along the track!)
-4. **Report Collisions**: Click "Report Collision 🚨" then click anywhere on the map to mark a hazard
-5. **View Details**: Click any marker to see detailed information
-6. **Hover Miss Rev**: Hover over Miss Rev collision icons to zoom in and see details
-7. **REV-solve**: Click a Miss Rev marker and use the "REV-solve Collision" button to clear it
-8. **Navigate**: Zoom and pan to explore different areas
+2. **Choose Theme**: Use the 🎨 Theme selector (top right) to toggle Normal/Dark Mode
+3. **Select Day**: Use the day dropdown in the control panel
+4. **Navigate Time**: Use the Skater-Slider to slide through time slots (Miss Rev moves along the track!)
+5. **Report Collisions**: Click "Report Collision 🚨" then click anywhere on the map to mark a hazard
+6. **View Details**: Click any marker to see detailed information
+7. **Hover Miss Rev**: Hover over Miss Rev collision icons to zoom in and see details
+8. **REV-solve**: Click a Miss Rev marker and use the "REV-solve Collision" button to clear it
+9. **Navigate**: Zoom and pan to explore different areas
 
 ## 📋 Data Format
 
@@ -276,6 +282,7 @@ pathOptions={{
 - [REV-SOLVE_FEATURE.md](./REV-SOLVE_FEATURE.md) - ✅ Removing collision reports
 - [SKATER_SLIDER_FEATURE.md](./SKATER_SLIDER_FEATURE.md) - 🛹 Custom time slider with Miss Rev
 - [UI_ENHANCEMENTS.md](./UI_ENHANCEMENTS.md) - 🎨 Final UI polish and improvements
+- [VISUAL_ENHANCEMENTS.md](./VISUAL_ENHANCEMENTS.md) - 📡 Banner, dark mode & slider icon improvements
 
 ### Technical Documentation
 - [ANIMATION_FIX_EXPLANATION.md](./ANIMATION_FIX_EXPLANATION.md) - ⚠️ Critical animation fix details

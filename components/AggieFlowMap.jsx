@@ -176,6 +176,9 @@ const AggieFlowMap = () => {
   // Info modal state
   const [showInfo, setShowInfo] = useState(false);
 
+  // Theme state (normal or dark)
+  const [theme, setTheme] = useState('normal');
+
   // Create custom Miss Rev icon as the collision marker itself
   const createMissRevIcon = (imageUrl) => {
     return L.divIcon({
@@ -471,12 +474,14 @@ const AggieFlowMap = () => {
         .miss-rev-slider::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          width: 50px;
-          height: 50px;
+          width: 55px;
+          height: 55px;
           border-radius: 50%;
           background-image: url('/MissRevSlider.png');
-          background-size: cover;
+          background-size: 85%;
           background-position: center;
+          background-repeat: no-repeat;
+          background-color: white;
           cursor: grab;
           border: 3px solid #500000;
           box-shadow: 0 2px 10px rgba(80, 0, 0, 0.5);
@@ -494,12 +499,14 @@ const AggieFlowMap = () => {
 
         /* Firefox */
         .miss-rev-slider::-moz-range-thumb {
-          width: 50px;
-          height: 50px;
+          width: 55px;
+          height: 55px;
           border-radius: 50%;
           background-image: url('/MissRevSlider.png');
-          background-size: cover;
+          background-size: 85%;
           background-position: center;
+          background-repeat: no-repeat;
+          background-color: white;
           cursor: grab;
           border: 3px solid #500000;
           box-shadow: 0 2px 10px rgba(80, 0, 0, 0.5);
@@ -774,7 +781,105 @@ const AggieFlowMap = () => {
         .info-content strong {
           font-weight: 600;
         }
+
+        /* Reveille's Radar Banner */
+        .app-banner {
+          position: absolute;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1000;
+          background: transparent;
+          padding: 0;
+          border-radius: 0;
+          box-shadow: none;
+          border: none;
+          animation: bannerEntrance 0.8s ease-out, bannerPulse 3s ease-in-out infinite 1s;
+        }
+
+        @keyframes bannerEntrance {
+          0% {
+            transform: translateX(-50%) translateY(-100px);
+            opacity: 0;
+          }
+          60% {
+            transform: translateX(-50%) translateY(5px);
+          }
+          100% {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes bannerPulse {
+          0%, 100% {
+            transform: translateX(-50%) scale(1);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+          }
+          50% {
+            transform: translateX(-50%) scale(1.05);
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+          }
+        }
+
+        .banner-image {
+          height: 40px;
+          display: block;
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+          object-fit: cover;
+          object-position: center;
+        }
+
+        /* Theme Selector */
+        .theme-selector {
+          background: white;
+          padding: 8px 12px;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+          border: 2px solid #500000;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-top: 10px;
+        }
+
+        .theme-selector label {
+          font-size: 12px;
+          font-weight: 600;
+          color: #500000;
+          margin: 0;
+        }
+
+        .theme-selector select {
+          padding: 4px 8px;
+          border: 1px solid #500000;
+          border-radius: 4px;
+          font-size: 12px;
+          cursor: pointer;
+          background: white;
+          color: #500000;
+          font-weight: 500;
+        }
+
+        /* Dark Theme */
+        .map-container.dark-theme {
+          filter: invert(0.9) hue-rotate(180deg);
+        }
+
+        .map-container.dark-theme .controls,
+        .map-container.dark-theme .info-button,
+        .map-container.dark-theme .theme-selector,
+        .map-container.dark-theme .app-banner,
+        .map-container.dark-theme .report-button {
+          filter: invert(1) hue-rotate(-180deg);
+        }
       `}</style>
+
+      {/* Reveille's Radar Banner */}
+      <div className="app-banner">
+        <img src="/ReveilleBanner.png" alt="Reveille's Radar" className="banner-image" />
+      </div>
+
 
       {/* Info Button */}
       <button className="info-button" onClick={() => setShowInfo(true)}>
@@ -905,6 +1010,19 @@ const AggieFlowMap = () => {
             </div>
           )}
         </div>
+
+        {/* Theme Selector */}
+        <div className="theme-selector">
+          <label htmlFor="theme-select">🎨 Theme:</label>
+          <select
+            id="theme-select"
+            value={theme}
+            onChange={(e) => setTheme(e.target.value)}
+          >
+            <option value="normal">Normal</option>
+            <option value="dark">Dark Mode</option>
+          </select>
+        </div>
       </div>
 
       {/* Info/Legend Panel */}
@@ -925,7 +1043,7 @@ const AggieFlowMap = () => {
       </div>
 
       {/* Map Container */}
-      <div className="map-container">
+      <div className={`map-container ${theme === 'dark' ? 'dark-theme' : ''}`}>
         <MapContainer
           center={[30.6134, -96.3402]}
           zoom={16}
