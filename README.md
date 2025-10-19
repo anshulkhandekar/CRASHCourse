@@ -79,8 +79,7 @@ npm run dev
 ```
 Howdy_Hack/
 ├── components/
-│   ├── AggieFlowMap.jsx       # Main map component
-│   └── README.md              # Component documentation
+│   └── AggieFlowMap.jsx       # Main map component
 ├── pages/
 │   ├── _app.jsx               # Next.js app wrapper
 │   └── index.jsx              # Home page
