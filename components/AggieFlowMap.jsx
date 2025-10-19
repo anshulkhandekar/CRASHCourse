@@ -95,13 +95,21 @@ const AggieFlowMap = () => {
     setIsReportingMode(false);
   };
 
-  // Create custom Miss Rev icon
+  // Remove/resolve a collision report
+  const handleResolveCollision = (reportId) => {
+    setUserReports(userReports.filter(report => report.id !== reportId));
+  };
+
+  // Create custom Miss Rev icon as the collision marker itself
   const createMissRevIcon = (imageUrl) => {
-    return L.icon({
-      iconUrl: imageUrl,
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      className: 'miss-rev-animated'
+    return L.divIcon({
+      html: `<div class="miss-rev-collision-wrapper">
+               <img src="${imageUrl}" alt="Miss Rev" class="miss-rev-collision-img" />
+             </div>`,
+      iconSize: [50, 50],
+      iconAnchor: [25, 25],
+      popupAnchor: [0, -25],
+      className: 'miss-rev-collision-marker'
     });
   };
 
@@ -239,8 +247,46 @@ const AggieFlowMap = () => {
           }
         }
 
-        :global(.miss-rev-animated) {
-          animation: shake-side 2s infinite ease-in-out;
+        /* Miss Rev as Collision Marker - Pulsating Animation */
+        :global(.miss-rev-collision-marker) {
+          width: 50px !important;
+          height: 50px !important;
+          background: none !important;
+          border: none !important;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+
+        :global(.miss-rev-collision-wrapper) {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: pulse-fast 1s infinite ease-in-out;
+        }
+
+        :global(.miss-rev-collision-img) {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 3px solid #ff6b35;
+          box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+          display: block;
+          transition: all 0.3s ease;
+        }
+
+        /* Hover effect - Make Miss Rev bigger to see details */
+        :global(.miss-rev-collision-marker:hover .miss-rev-collision-img) {
+          transform: scale(1.8);
+          border-width: 4px;
+          box-shadow: 0 0 25px rgba(255, 107, 53, 0.9);
+          z-index: 1000;
+        }
+
+        /* Pause pulsating on hover so user can see details clearly */
+        :global(.miss-rev-collision-marker:hover .miss-rev-collision-wrapper) {
+          animation-play-state: paused;
         }
 
         /* Report button styling */
@@ -285,6 +331,35 @@ const AggieFlowMap = () => {
           color: #666;
           margin-top: 5px;
           font-style: italic;
+        }
+
+        /* REV-solve button styling */
+        .resolve-button {
+          padding: 8px 16px;
+          background-color: #4caf50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          font-size: 13px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          margin-top: 10px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+        }
+
+        .resolve-button:hover {
+          background-color: #45a049;
+          transform: translateY(-1px);
+          box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+        }
+
+        .resolve-button:active {
+          transform: translateY(0);
         }
 
         /* Leaflet popup customization */
@@ -384,7 +459,7 @@ const AggieFlowMap = () => {
         </div>
         <div className="legend-item">
           <div className="legend-color" style={{ backgroundColor: '#ff6b35' }}></div>
-          <span className="legend-text">🚨 User Reported Collisions</span>
+          <span className="legend-text">🐶 Miss Rev Collision Reports (hover to zoom)</span>
         </div>
       </div>
 
@@ -473,50 +548,37 @@ const AggieFlowMap = () => {
           {/* Map Click Handler for Collision Reporting */}
           <MapClickHandler isReportingMode={isReportingMode} onMapClick={handleMapClick} />
 
-          {/* Layer 3: User Reported Collisions */}
+          {/* Layer 3: User Reported Collisions - Miss Rev as the Collision Marker */}
           {userReports.map((report) => (
-            <React.Fragment key={`report-${report.id}`}>
-              {/* Collision Alert Circle */}
-              <CircleMarker
-                center={[report.lat, report.lng]}
-                radius={10}
-                pathOptions={{
-                  fillColor: '#ff6b35',
-                  fillOpacity: 0.6,
-                  color: '#ff4500',
-                  weight: 2,
-                }}
-                className="pulsating-fast"
-              >
-                <Popup>
-                  <div className="popup-content">
-                    <h4>🚨 Collision Report #{report.id}</h4>
-                    <p>
-                      <strong>Location:</strong> {report.lat.toFixed(5)}, {report.lng.toFixed(5)}
-                    </p>
-                    <p>
-                      <strong>Status:</strong> User Reported
-                    </p>
-                    <p style={{ fontSize: '11px', color: '#666', marginTop: '8px' }}>
-                      Please use caution in this area
-                    </p>
-                  </div>
-                </Popup>
-              </CircleMarker>
-
-              {/* Miss Rev Icon (offset slightly from collision marker) */}
-              <Marker
-                position={[report.lat + 0.0001, report.lng + 0.0001]}
-                icon={createMissRevIcon(report.missRevImage)}
-              >
-                <Popup>
-                  <div className="popup-content">
-                    <h4>🐶 Miss Rev on Alert!</h4>
-                    <p>Watching over collision site #{report.id}</p>
-                  </div>
-                </Popup>
-              </Marker>
-            </React.Fragment>
+            <Marker
+              key={`report-${report.id}`}
+              position={[report.lat, report.lng]}
+              icon={createMissRevIcon(report.missRevImage)}
+            >
+              <Popup>
+                <div className="popup-content">
+                  <h4>🐶 Miss Rev Collision Report #{report.id}</h4>
+                  <p>
+                    <strong>Location:</strong> {report.lat.toFixed(5)}, {report.lng.toFixed(5)}
+                  </p>
+                  <p>
+                    <strong>Status:</strong> User Reported
+                  </p>
+                  <p style={{ fontSize: '11px', color: '#666', marginTop: '8px' }}>
+                    Miss Rev is watching over this collision site. Please use caution in this area.
+                  </p>
+                  <p style={{ fontSize: '11px', color: '#999', fontStyle: 'italic', marginTop: '5px' }}>
+                    💡 Hover over Miss Rev to see her up close!
+                  </p>
+                  <button 
+                    className="resolve-button"
+                    onClick={() => handleResolveCollision(report.id)}
+                  >
+                    ✅ REV-solve Collision
+                  </button>
+                </div>
+              </Popup>
+            </Marker>
           ))}
         </MapContainer>
       </div>

@@ -48,8 +48,46 @@ path.pulsating-hotspot {
   }
 }
 
-.miss-rev-animated {
-  animation: shake-side 2s infinite ease-in-out;
+/* Miss Rev as Collision Marker - Global Styles */
+.miss-rev-collision-marker {
+  width: 50px !important;
+  height: 50px !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.miss-rev-collision-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-fast 1s infinite ease-in-out;
+}
+
+.miss-rev-collision-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #ff6b35;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+  display: block;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+/* Hover zoom effect */
+.miss-rev-collision-marker:hover .miss-rev-collision-img {
+  transform: scale(1.8);
+  border-width: 4px;
+  box-shadow: 0 0 25px rgba(255, 107, 53, 0.9);
+  z-index: 1000;
+}
+
+.miss-rev-collision-marker:hover .miss-rev-collision-wrapper {
+  animation-play-state: paused;
 }
 
 /* Fast pulse animation for collision alerts */

@@ -47,9 +47,15 @@ The AggieFlow map now includes a user-driven collision reporting system with ani
    - Exact coordinates
    - User reported status
    - Safety message
+   - **✅ REV-solve button** to remove the collision
 2. Click on Miss Rev icon to see:
    - "Miss Rev on Alert!"
    - Report ID reference
+
+### Step 4: REV-solve (Remove) a Collision
+1. Click the green "✅ REV-solve Collision" button in the popup
+2. Both the collision marker AND Miss Rev icon disappear instantly
+3. Collision counter decrements
 
 ## Technical Implementation
 
