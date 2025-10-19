@@ -1,0 +1,914 @@
+[
+    {
+        "Day": "Friday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.37857692573,
+        "Hotspot_Latitude": 30.61768873960412,
+        "Hotspot_Longitude": -96.33989840879686
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.181977191681,
+        "Hotspot_Latitude": 30.613768742790814,
+        "Hotspot_Longitude": -96.34244185697855
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.205485202539,
+        "Hotspot_Latitude": 30.609206271705897,
+        "Hotspot_Longitude": -96.34776715355802
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "11:30-12:20",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.33674963392,
+        "Hotspot_Latitude": 30.617720746803112,
+        "Hotspot_Longitude": -96.33986231713543
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "11:30-12:20",
+        "Cluster_ID": "Cluster_Remaining",
+        "Hotspot_Proportion": 0.150288519517,
+        "Hotspot_Latitude": 30.613572280802117,
+        "Hotspot_Longitude": -96.34574895702038
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "11:30-12:20",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.200757901989,
+        "Hotspot_Latitude": 30.60878174603185,
+        "Hotspot_Longitude": -96.34764135993106
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.27486051853,
+        "Hotspot_Latitude": 30.618199710447737,
+        "Hotspot_Longitude": -96.33987337910449
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.159911388256,
+        "Hotspot_Latitude": 30.618713617239745,
+        "Hotspot_Longitude": -96.3399333504364
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_Remaining",
+        "Hotspot_Proportion": 0.155808992453,
+        "Hotspot_Latitude": 30.61316995260692,
+        "Hotspot_Longitude": -96.34639549236415
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.252297341639,
+        "Hotspot_Latitude": 30.60923575284551,
+        "Hotspot_Longitude": -96.34840245528473
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "13:50-14:40",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.372174244327,
+        "Hotspot_Latitude": 30.6189004726153,
+        "Hotspot_Longitude": -96.34026379628054
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "13:50-14:40",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.197485394965,
+        "Hotspot_Latitude": 30.613363398713776,
+        "Hotspot_Longitude": -96.34295561414801
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "13:50-14:40",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.24834899670299998,
+        "Hotspot_Latitude": 30.608806126310274,
+        "Hotspot_Longitude": -96.34847693940192
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.39992404101,
+        "Hotspot_Latitude": 30.617822184235443,
+        "Hotspot_Longitude": -96.34037963912633
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.192328142822,
+        "Hotspot_Latitude": 30.6136039454976,
+        "Hotspot_Longitude": -96.34249617693527
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.162096467911,
+        "Hotspot_Latitude": 30.609841935332707,
+        "Hotspot_Longitude": -96.34845759137743
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "16:10-17:00",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.380406138552,
+        "Hotspot_Latitude": 30.61905428484087,
+        "Hotspot_Longitude": -96.34028174409126
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "16:10-17:00",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.294295458067,
+        "Hotspot_Latitude": 30.60952297603373,
+        "Hotspot_Longitude": -96.34857269159858
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "17:20-18:10",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.44024075668,
+        "Hotspot_Latitude": 30.618573004557597,
+        "Hotspot_Longitude": -96.34009242513027
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "17:20-18:10",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.224706219544,
+        "Hotspot_Latitude": 30.60808749362269,
+        "Hotspot_Longitude": -96.34783217474484
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "8:00-8:50",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.333920187813,
+        "Hotspot_Latitude": 30.61900637208146,
+        "Hotspot_Longitude": -96.34014829525482
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "8:00-8:50",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.16071428570500002,
+        "Hotspot_Latitude": 30.619141168492458,
+        "Hotspot_Longitude": -96.34057871674494
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "8:00-8:50",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.28026492286,
+        "Hotspot_Latitude": 30.608909542327606,
+        "Hotspot_Longitude": -96.34756194136972
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.335711658683,
+        "Hotspot_Latitude": 30.61858341148104,
+        "Hotspot_Longitude": -96.34065778702895
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.19183523354299997,
+        "Hotspot_Latitude": 30.61342470092017,
+        "Hotspot_Longitude": -96.34284871932523
+    },
+    {
+        "Day": "Friday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.251268848846,
+        "Hotspot_Latitude": 30.610399136417055,
+        "Hotspot_Longitude": -96.34824522833713
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.41283643891300004,
+        "Hotspot_Latitude": 30.619283951855554,
+        "Hotspot_Longitude": -96.34031383951854
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.15751552795999998,
+        "Hotspot_Latitude": 30.618655662460593,
+        "Hotspot_Longitude": -96.34007299684549
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.219544513458,
+        "Hotspot_Latitude": 30.608079294606014,
+        "Hotspot_Longitude": -96.34873136552245
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "11:30-12:20",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.3730000796,
+        "Hotspot_Latitude": 30.619232249253088,
+        "Hotspot_Longitude": -96.3401883376014
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "11:30-12:20",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.25041789387,
+        "Hotspot_Latitude": 30.609861547997525,
+        "Hotspot_Longitude": -96.34906638270832
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.342240622251,
+        "Hotspot_Latitude": 30.618357617302124,
+        "Hotspot_Longitude": -96.34046758797655
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.166353029709,
+        "Hotspot_Latitude": 30.61294017345411,
+        "Hotspot_Longitude": -96.34329975490179
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.24909045292899998,
+        "Hotspot_Latitude": 30.609971551246613,
+        "Hotspot_Longitude": -96.34924212289108
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "13:50-14:40",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.312252964441,
+        "Hotspot_Latitude": 30.617942063841415,
+        "Hotspot_Longitude": -96.34025733902035
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "13:50-14:40",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.177865612649,
+        "Hotspot_Latitude": 30.618750420289846,
+        "Hotspot_Longitude": -96.34006171980671
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "13:50-14:40",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.238099329789,
+        "Hotspot_Latitude": 30.609696708769565,
+        "Hotspot_Longitude": -96.34775077228421
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.363963714466,
+        "Hotspot_Latitude": 30.618513314307762,
+        "Hotspot_Longitude": -96.34065053843221
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.158576275857,
+        "Hotspot_Latitude": 30.61302298253291,
+        "Hotspot_Longitude": -96.34343979475969
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.213974101521,
+        "Hotspot_Latitude": 30.608048511326807,
+        "Hotspot_Longitude": -96.3498756634305
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "16:10-17:00",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.324276010016,
+        "Hotspot_Latitude": 30.618319334068218,
+        "Hotspot_Longitude": -96.34015192502757
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "16:10-17:00",
+        "Cluster_ID": "Cluster_Remaining",
+        "Hotspot_Proportion": 0.155809796211,
+        "Hotspot_Latitude": 30.61319407985337,
+        "Hotspot_Longitude": -96.34706483249148
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "16:10-17:00",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.241902037904,
+        "Hotspot_Latitude": 30.60979079219653,
+        "Hotspot_Longitude": -96.34805964232912
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "17:20-18:10",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.396923472998,
+        "Hotspot_Latitude": 30.619123985730447,
+        "Hotspot_Longitude": -96.34060703259283
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "17:20-18:10",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.233442749568,
+        "Hotspot_Latitude": 30.60902972429024,
+        "Hotspot_Longitude": -96.34839705817468
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "8:00-8:50",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.242203258339,
+        "Hotspot_Latitude": 30.61642836963493,
+        "Hotspot_Longitude": -96.33974172645739
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "8:00-8:50",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.323041117105,
+        "Hotspot_Latitude": 30.61098698126801,
+        "Hotspot_Longitude": -96.34777277617647
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.31099485886,
+        "Hotspot_Latitude": 30.618360290023194,
+        "Hotspot_Longitude": -96.34033572215783
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.169567962469,
+        "Hotspot_Latitude": 30.618838867021317,
+        "Hotspot_Longitude": -96.34070606914887
+    },
+    {
+        "Day": "Monday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.289347884901,
+        "Hotspot_Latitude": 30.610428718827915,
+        "Hotspot_Longitude": -96.34817283042413
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "11:10-12:25",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.423251722609,
+        "Hotspot_Latitude": 30.61844032906097,
+        "Hotspot_Longitude": -96.34028946484234
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "11:10-12:25",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.246518105853,
+        "Hotspot_Latitude": 30.608702010109813,
+        "Hotspot_Longitude": -96.3488523609872
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "12:45-14:00",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.350761801702,
+        "Hotspot_Latitude": 30.617222599098028,
+        "Hotspot_Longitude": -96.34039342511278
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "12:45-14:00",
+        "Cluster_ID": "Cluster_Remaining",
+        "Hotspot_Proportion": 0.157938556325,
+        "Hotspot_Latitude": 30.612760274117164,
+        "Hotspot_Longitude": -96.34796477596166
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "12:45-14:00",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.226042794107,
+        "Hotspot_Latitude": 30.609665933701688,
+        "Hotspot_Longitude": -96.34748495395948
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "14:20-15:35",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.385006561677,
+        "Hotspot_Latitude": 30.61818450788253,
+        "Hotspot_Longitude": -96.34057202386025
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "14:20-15:35",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.16215551180499999,
+        "Hotspot_Latitude": 30.618453970662568,
+        "Hotspot_Longitude": -96.34018363176536
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "14:20-15:35",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.231545275579,
+        "Hotspot_Latitude": 30.611041760538598,
+        "Hotspot_Longitude": -96.34711340772209
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "15:55-17:10",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.370446057364,
+        "Hotspot_Latitude": 30.617993378352672,
+        "Hotspot_Longitude": -96.34005024728933
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "15:55-17:10",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.176097526588,
+        "Hotspot_Latitude": 30.619118187274978,
+        "Hotspot_Longitude": -96.34056806722704
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "15:55-17:10",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.228031851181,
+        "Hotspot_Latitude": 30.60862267305311,
+        "Hotspot_Longitude": -96.34813939431407
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "17:30-18:45",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.35823160222300005,
+        "Hotspot_Latitude": 30.618682674239782,
+        "Hotspot_Longitude": -96.34019495764343
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "17:30-18:45",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.15987309468299998,
+        "Hotspot_Latitude": 30.618407273511714,
+        "Hotspot_Longitude": -96.33983864106987
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "17:30-18:45",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.206152148417,
+        "Hotspot_Latitude": 30.608489692204838,
+        "Hotspot_Longitude": -96.34834645366328
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "8:00-9:15",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.2652942157,
+        "Hotspot_Latitude": 30.617957166195385,
+        "Hotspot_Longitude": -96.34048641218969
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "8:00-9:15",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.15835972662,
+        "Hotspot_Latitude": 30.61864745789486,
+        "Hotspot_Longitude": -96.33982787894759
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "8:00-9:15",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.156442740423,
+        "Hotspot_Latitude": 30.61346151838082,
+        "Hotspot_Longitude": -96.34283172615837
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "8:00-9:15",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.32847141189,
+        "Hotspot_Latitude": 30.609108546054372,
+        "Hotspot_Longitude": -96.34835912458759
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "9:35-10:50",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.218997996009,
+        "Hotspot_Latitude": 30.618035091508002,
+        "Hotspot_Longitude": -96.34013450219618
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "9:35-10:50",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.187735470929,
+        "Hotspot_Latitude": 30.618734602903455,
+        "Hotspot_Longitude": -96.33999326643882
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "9:35-10:50",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.163767535075,
+        "Hotspot_Latitude": 30.61421259422423,
+        "Hotspot_Longitude": -96.342335770925
+    },
+    {
+        "Day": "Thursday",
+        "Time Slot": "9:35-10:50",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.283366733468,
+        "Hotspot_Latitude": 30.61170499575673,
+        "Hotspot_Longitude": -96.34719311739732
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "11:10-12:25",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.324212841974,
+        "Hotspot_Latitude": 30.6189184223917,
+        "Hotspot_Longitude": -96.340354120017
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "11:10-12:25",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.278495806395,
+        "Hotspot_Latitude": 30.610225020982252,
+        "Hotspot_Longitude": -96.34842494445807
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "12:45-14:00",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.43989198249,
+        "Hotspot_Latitude": 30.618768810330323,
+        "Hotspot_Longitude": -96.34010372565616
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "12:45-14:00",
+        "Cluster_ID": "Cluster_Remaining",
+        "Hotspot_Proportion": 0.163423037525,
+        "Hotspot_Latitude": 30.615341914529917,
+        "Hotspot_Longitude": -96.3438733390314
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "12:45-14:00",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.161188192558,
+        "Hotspot_Latitude": 30.606801813980454,
+        "Hotspot_Longitude": -96.3484554419412
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "14:20-15:35",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.2285543404,
+        "Hotspot_Latitude": 30.617747158878387,
+        "Hotspot_Longitude": -96.34090158130843
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "14:20-15:35",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.193523581682,
+        "Hotspot_Latitude": 30.618739200882985,
+        "Hotspot_Longitude": -96.33993379249445
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "14:20-15:35",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.282382091619,
+        "Hotspot_Latitude": 30.609282462935298,
+        "Hotspot_Longitude": -96.34835839334347
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "15:55-17:10",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.379962648324,
+        "Hotspot_Latitude": 30.618630556524337,
+        "Hotspot_Longitude": -96.34033778817185
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "15:55-17:10",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.166817278182,
+        "Hotspot_Latitude": 30.612926031058027,
+        "Hotspot_Longitude": -96.34310457204778
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "15:55-17:10",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.224652087477,
+        "Hotspot_Latitude": 30.60824716814142,
+        "Hotspot_Longitude": -96.3492852534192
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "17:30-18:45",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.326270185107,
+        "Hotspot_Latitude": 30.61831401014007,
+        "Hotspot_Longitude": -96.34066822308064
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "17:30-18:45",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.190862544298,
+        "Hotspot_Latitude": 30.61334761040027,
+        "Hotspot_Longitude": -96.34328130416847
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "17:30-18:45",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.214021268211,
+        "Hotspot_Latitude": 30.609625244754895,
+        "Hotspot_Longitude": -96.34822656238521
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "8:00-9:15",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.37249890461,
+        "Hotspot_Latitude": 30.618654328562947,
+        "Hotspot_Longitude": -96.34063670260721
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "8:00-9:15",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.19818898789,
+        "Hotspot_Latitude": 30.61008123802515,
+        "Hotspot_Longitude": -96.3480326381726
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "9:35-10:50",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.43122378486,
+        "Hotspot_Latitude": 30.6185174753253,
+        "Hotspot_Longitude": -96.34038255185234
+    },
+    {
+        "Day": "Tuesday",
+        "Time Slot": "9:35-10:50",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.182519121644,
+        "Hotspot_Latitude": 30.612048469077546,
+        "Hotspot_Longitude": -96.34671982764415
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.325960989152,
+        "Hotspot_Latitude": 30.617440120180262,
+        "Hotspot_Longitude": -96.34021210816218
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.177752387173,
+        "Hotspot_Latitude": 30.613646359044953,
+        "Hotspot_Longitude": -96.34274879247022
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "10:20-11:10",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.276830164042,
+        "Hotspot_Latitude": 30.60833273290094,
+        "Hotspot_Longitude": -96.34851172759414
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "11:30-12:20",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.33418311602,
+        "Hotspot_Latitude": 30.61737129904095,
+        "Hotspot_Longitude": -96.3401370292066
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "11:30-12:20",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.183844416917,
+        "Hotspot_Latitude": 30.61884154912831,
+        "Hotspot_Longitude": -96.34045032884318
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "11:30-12:20",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.22587224121699997,
+        "Hotspot_Latitude": 30.61332851983252,
+        "Hotspot_Longitude": -96.34314906481767
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.34399340239,
+        "Hotspot_Latitude": 30.61845052477349,
+        "Hotspot_Longitude": -96.34032938732021
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "12:40-13:30",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.24832768258,
+        "Hotspot_Latitude": 30.609561044280294,
+        "Hotspot_Longitude": -96.34665078228768
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "13:50-14:40",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.397667747601,
+        "Hotspot_Latitude": 30.61856395326993,
+        "Hotspot_Longitude": -96.3402919084209
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "13:50-14:40",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.250436517854,
+        "Hotspot_Latitude": 30.608595082171373,
+        "Hotspot_Longitude": -96.34966475597606
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.29109015601800003,
+        "Hotspot_Latitude": 30.619138455949347,
+        "Hotspot_Longitude": -96.33999509839538
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_East_Sci_Eng",
+        "Hotspot_Proportion": 0.178461267287,
+        "Hotspot_Latitude": 30.618777713580275,
+        "Hotspot_Longitude": -96.33999339753093
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_Remaining",
+        "Hotspot_Proportion": 0.182515202263,
+        "Hotspot_Latitude": 30.611671907291317,
+        "Hotspot_Longitude": -96.34945276677902
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "15:00-15:50",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.290032607764,
+        "Hotspot_Latitude": 30.610036918869824,
+        "Hotspot_Longitude": -96.34882499848065
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "16:10-17:00",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.317838140627,
+        "Hotspot_Latitude": 30.61797240088144,
+        "Hotspot_Longitude": -96.33997265859033
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "16:10-17:00",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.198753850506,
+        "Hotspot_Latitude": 30.613556400140567,
+        "Hotspot_Longitude": -96.34268123987353
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "16:10-17:00",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.24474936992500002,
+        "Hotspot_Latitude": 30.609737989130316,
+        "Hotspot_Longitude": -96.34818259725387
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "17:20-18:10",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.299128593534,
+        "Hotspot_Latitude": 30.61841012796081,
+        "Hotspot_Longitude": -96.34043902531991
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "17:20-18:10",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.29204332601,
+        "Hotspot_Latitude": 30.609985942554292,
+        "Hotspot_Longitude": -96.34814502509761
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "8:00-8:50",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.391042204981,
+        "Hotspot_Latitude": 30.61833401798834,
+        "Hotspot_Longitude": -96.3403350587372
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "8:00-8:50",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.245765144995,
+        "Hotspot_Latitude": 30.609110134345762,
+        "Hotspot_Longitude": -96.34837790303743
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_Central_Eng",
+        "Hotspot_Proportion": 0.302257592985,
+        "Hotspot_Latitude": 30.617251308436366,
+        "Hotspot_Longitude": -96.3401110021494
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_South_Arts",
+        "Hotspot_Proportion": 0.269855449122,
+        "Hotspot_Latitude": 30.613257330725034,
+        "Hotspot_Longitude": -96.34321057779133
+    },
+    {
+        "Day": "Wednesday",
+        "Time Slot": "9:10-10:00",
+        "Cluster_ID": "Cluster_West_Aggie",
+        "Hotspot_Proportion": 0.188971901917,
+        "Hotspot_Latitude": 30.60931081220478,
+        "Hotspot_Longitude": -96.34957920498496
+    }
+]
