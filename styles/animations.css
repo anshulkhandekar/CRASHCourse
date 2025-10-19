@@ -1,0 +1,405 @@
+/**
+ * AggieFlow Map Animations
+ * Custom CSS animations for the map markers and UI elements
+ */
+
+/* ============================================
+   PULSATING HOTSPOT ANIMATION
+   ============================================ */
+
+/**
+ * Standard pulse animation for hotspot markers
+ * Duration: 2 seconds
+ * Effect: Scale and opacity changes
+ */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulsating-hotspot {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* ============================================
+   ALTERNATIVE PULSE ANIMATIONS
+   ============================================ */
+
+/**
+ * Slow pulse - More subtle, longer duration
+ * Use for: Low-priority hotspots
+ */
+@keyframes pulse-slow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulsating-slow {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/**
+ * Fast pulse - Urgent attention
+ * Use for: Critical congestion zones
+ */
+@keyframes pulse-fast {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulsating-fast {
+  animation: pulse-fast 1s infinite ease-in-out;
+}
+
+/**
+ * Ripple effect - Expanding rings
+ * Use for: Alert-style notifications
+ */
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: relative;
+}
+
+.ripple-effect::before,
+.ripple-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  transform: translate(-50%, -50%);
+  animation: ripple 2s infinite;
+}
+
+.ripple-effect::after {
+  animation-delay: 1s;
+}
+
+/* ============================================
+   MARKER ENTRANCE ANIMATIONS
+   ============================================ */
+
+/**
+ * Fade in - Smooth appearance
+ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.marker-fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/**
+ * Pop in - Bouncy entrance
+ */
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.marker-pop-in {
+  animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/**
+ * Slide up - Rising from ground
+ */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.marker-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* ============================================
+   UI CONTROL ANIMATIONS
+   ============================================ */
+
+/**
+ * Control panel slide in
+ */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.controls-enter {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/**
+ * Legend panel slide in
+ */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.legend-enter {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+/* ============================================
+   LOADING ANIMATIONS
+   ============================================ */
+
+/**
+ * Spinner for loading state
+ */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/**
+ * Skeleton pulse for loading placeholders
+ */
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton-loading {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+
+/**
+ * Marker hover - Gentle grow
+ */
+.marker-hover:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+/**
+ * Control hover - Subtle lift
+ */
+.control-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+/* ============================================
+   ATTENTION ANIMATIONS
+   ============================================ */
+
+/**
+ * Shake - Draw attention to element
+ */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.attention-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/**
+ * Glow - Highlight important markers
+ */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  }
+}
+
+.marker-glow {
+  animation: glow 2s infinite ease-in-out;
+}
+
+/* ============================================
+   CONDITIONAL ANIMATIONS
+   ============================================ */
+
+/**
+ * Low traffic - Slow, subtle pulse
+ */
+.traffic-low {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/**
+ * Medium traffic - Standard pulse
+ */
+.traffic-medium {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/**
+ * High traffic - Fast, urgent pulse
+ */
+.traffic-high {
+  animation: pulse-fast 1s infinite ease-in-out;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/**
+ * Respect user's motion preferences
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.no-animation {
+  animation: none !important;
+}
+
+.animation-paused {
+  animation-play-state: paused !important;
+}
+
+.animation-running {
+  animation-play-state: running !important;
+}
+
+/* ============================================
+   USAGE EXAMPLES
+   ============================================
+
+   Example 1: Apply pulsating effect
+   <CircleMarker className="pulsating-hotspot" ... />
+
+   Example 2: Use slow pulse for low-priority
+   <CircleMarker className="pulsating-slow" ... />
+
+   Example 3: Combine animations
+   <CircleMarker className="pulsating-hotspot marker-glow" ... />
+
+   Example 4: Conditional animation based on traffic
+   <CircleMarker 
+     className={traffic > 0.7 ? 'traffic-high' : 'traffic-low'} 
+     ... 
+   />
+
+   Example 5: Add entrance animation
+   <CircleMarker className="pulsating-hotspot marker-pop-in" ... />
+
+   ============================================ */
+
