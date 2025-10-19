@@ -1,8 +1,8 @@
-# 📡 Reveille's Radar - Campus Traffic Visualization
+# 📡 CRASHCourse - Campus Traffic Visualization
 
 A real-time campus traffic visualization tool built with React, Next.js, and Leaflet that displays building-level traffic and congestion hotspots on an interactive map.
 
-![Reveille's Radar Preview](https://img.shields.io/badge/Status-Active-success)
+![CRASHCourse Preview](https://img.shields.io/badge/Status-Active-success)
 ![Next.js](https://img.shields.io/badge/Next.js-14.0-black)
 ![React](https://img.shields.io/badge/React-18.2-blue)
 ![Leaflet](https://img.shields.io/badge/Leaflet-1.9-green)
@@ -39,7 +39,7 @@ npm run dev
 - Real-time data filtering and updates
 
 ### 🎨 Visual Design
-- **📡 Reveille's Radar Banner**: Animated top banner with bounce entrance effect
+- **📡 CRASHCourse Banner**: Animated top banner with bounce entrance effect
 - **Pulsating Animation**: Hotspot markers pulse to indicate high-traffic areas
   - ⚠️ **Important**: Animation targets inner SVG `<path>` to avoid Leaflet positioning conflicts
 - **Dynamic Sizing**: Hotspot size scales with congestion level
