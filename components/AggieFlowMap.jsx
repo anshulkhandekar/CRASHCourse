@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 const AggieFlowMap = () => {
   // State variables
   const [selectedDay, setSelectedDay] = useState('Monday');
-  const [selectedTime, setSelectedTime] = useState('12:40-13:30');
+  const [selectedTime, setSelectedTime] = useState('8:00-8:50'); 
   const [buildingData, setBuildingData] = useState([]);
   const [clusterHotspots, setClusterHotspots] = useState([]);
   const [filteredBuildings, setFilteredBuildings] = useState([]);
@@ -266,8 +266,8 @@ const AggieFlowMap = () => {
       {/* Map Container */}
       <div className="map-container">
         <MapContainer
-          center={[30.6174, -96.3402]}
-          zoom={14}
+          center={[30.6134, -96.3402]}
+          zoom={16}
           style={{ width: '100%', height: '100%' }}
           scrollWheelZoom={true}
         >
