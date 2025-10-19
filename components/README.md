@@ -1,8 +1,8 @@
-# Reveille's RadarMap Component
+# CRASHCourse Component
 
 ## Description
 
-The `Reveille's RadarMap` component is a dual-layer React Leaflet visualization that displays campus traffic patterns with real-time filtering capabilities.
+The `CRASHCourse` component is a dual-layer React Leaflet visualization that displays campus traffic patterns with real-time filtering capabilities.
 
 ## Features
 
@@ -23,10 +23,10 @@ The `Reveille's RadarMap` component is a dual-layer React Leaflet visualization 
 ## Usage
 
 ```jsx
-import Reveille's RadarMap from '../components/Reveille's RadarMap';
+import CRASHCourse from '../components/CRASHCourse';
 
 export default function Page() {
-  return <Reveille's RadarMap />;
+  return <CRASHCourse />;
 }
 ```
 
@@ -35,7 +35,7 @@ export default function Page() {
 ```jsx
 import dynamic from 'next/dynamic';
 
-const Reveille's RadarMap = dynamic(() => import('../components/Reveille's RadarMap'), {
+const CRASHCourse = dynamic(() => import('../components/CRASHCourse'), {
   ssr: false
 });
 ```
@@ -106,7 +106,7 @@ Pulsating effect defined with CSS keyframes:
 ## Component Structure
 
 ```
-Reveille's RadarMap
+CRASHCourse
 ├── State Management (useState)
 │   ├── selectedDay
 │   ├── selectedTime
