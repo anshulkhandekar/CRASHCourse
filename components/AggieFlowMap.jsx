@@ -192,6 +192,10 @@ const AggieFlowMap = () => {
     });
   };
 
+  useEffect(() => {
+    setShowInfo(true);
+  }, []);
+
   return (
     <div className="aggie-flow-container">
       <style jsx>{`
@@ -782,7 +786,7 @@ const AggieFlowMap = () => {
           font-weight: 600;
         }
 
-        /* Reveille's Radar Banner */
+        /* CRASHCourse Banner */
         .app-banner {
           position: absolute;
           top: 10px;
@@ -875,9 +879,9 @@ const AggieFlowMap = () => {
         }
       `}</style>
 
-      {/* Reveille's Radar Banner */}
+      {/* CRASHCourse Banner */}
       <div className="app-banner">
-        <img src="/ReveilleBanner.png" alt="Reveille's Radar" className="banner-image" />
+        <img src="/ReveilleBanner.png" alt="CRASHCourse" className="banner-image" />
       </div>
 
 
@@ -891,7 +895,7 @@ const AggieFlowMap = () => {
         <div className="info-modal-overlay" onClick={() => setShowInfo(false)}>
           <div className="info-modal" onClick={(e) => e.stopPropagation()}>
             <button className="close-modal" onClick={() => setShowInfo(false)}>✕</button>
-            <h2>📡 Welcome to Reveille's Radar!</h2>
+            <h2>📡 Welcome to CRASHCourse!</h2>
             <div className="info-content">
               <section>
                 <h3>📍 How to Use:</h3>
