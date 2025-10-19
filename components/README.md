@@ -86,7 +86,15 @@ Pulsating effect defined with CSS keyframes:
   50% { transform: scale(1.2); opacity: 0.7; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+/* IMPORTANT: Target the inner SVG path to avoid Leaflet positioning conflicts */
+.pulsating-hotspot > path {
+  animation: pulse 2s infinite ease-in-out;
+  transform-origin: center center;
+}
 ```
+
+**Important Note**: The animation targets the inner `<path>` element (`.pulsating-hotspot > path`) rather than the CircleMarker itself. This prevents CSS transform conflicts with Leaflet's positioning system, ensuring the marker stays in place while pulsating.
 
 ## Map Configuration
 

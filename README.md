@@ -32,6 +32,7 @@ npm run dev
 
 ### 🎨 Visual Design
 - **Pulsating Animation**: Hotspot markers pulse to indicate high-traffic areas
+  - ⚠️ **Important**: Animation targets inner SVG `<path>` to avoid Leaflet positioning conflicts
 - **Dynamic Sizing**: Hotspot size scales with congestion level
 - **Color Coding**: Green for buildings, red for congestion alerts
 - **Responsive UI**: Works on desktop and mobile devices
@@ -253,7 +254,10 @@ pathOptions={{
 ## 📄 Documentation
 
 - [SETUP.md](./SETUP.md) - Detailed setup instructions
-- [Component README](./components/README.md) - Component documentation
+- [QUICKSTART.md](./QUICKSTART.md) - 5-minute quick start guide
+- [Component README](./components/README.md) - Component API documentation
+- [ANIMATION_FIX_EXPLANATION.md](./ANIMATION_FIX_EXPLANATION.md) - ⚠️ Critical animation fix details
+- [CRITICAL_FIX_APPLIED.md](./CRITICAL_FIX_APPLIED.md) - Fix verification and checklist
 - [React Leaflet Docs](https://react-leaflet.js.org/)
 - [Next.js Docs](https://nextjs.org/docs)
 

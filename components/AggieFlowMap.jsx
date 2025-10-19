@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 const AggieFlowMap = () => {
   // State variables
   const [selectedDay, setSelectedDay] = useState('Monday');
-  const [selectedTime, setSelectedTime] = useState('8:00-8:50'); 
+  const [selectedTime, setSelectedTime] = useState('8:00-8:50');
   const [buildingData, setBuildingData] = useState([]);
   const [clusterHotspots, setClusterHotspots] = useState([]);
   const [filteredBuildings, setFilteredBuildings] = useState([]);
@@ -166,24 +166,22 @@ const AggieFlowMap = () => {
           color: #333;
         }
 
-        /* Pulsating animation for hotspots */
+        /* Pulsating animation for hotspots - NO TRANSFORM to avoid Leaflet positioning conflicts */
         @keyframes pulse {
-          0% {
-            transform: scale(1);
-            opacity: 1;
+          0%, 100% {
+            opacity: 0.4;
+            filter: drop-shadow(0 0 0 rgba(220, 53, 69, 0));
           }
           50% {
-            transform: scale(1.2);
             opacity: 0.7;
-          }
-          100% {
-            transform: scale(1);
-            opacity: 1;
+            filter: drop-shadow(0 0 15px rgba(220, 53, 69, 0.8));
           }
         }
 
-        :global(.pulsating-hotspot) {
-          animation: pulse 2s infinite;
+        /* Target path elements that have the pulsating-hotspot class directly */
+        /* Uses opacity and filter instead of transform to avoid position shifting */
+        :global(path.pulsating-hotspot) {
+          animation: pulse 2s infinite ease-in-out;
         }
 
         /* Leaflet popup customization */

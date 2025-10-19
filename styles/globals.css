@@ -17,23 +17,21 @@ body {
   height: 100%;
 }
 
-/* Additional pulsating animation CSS for hotspots */
+/* Pulsating animation for hotspots - NO TRANSFORM to avoid Leaflet positioning conflicts */
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
+  0%, 100% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 0 rgba(220, 53, 69, 0));
   }
   50% {
-    transform: scale(1.2);
     opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
+    filter: drop-shadow(0 0 15px rgba(220, 53, 69, 0.8));
   }
 }
 
-.pulsating-hotspot {
+/* Target path elements that have the pulsating-hotspot class directly */
+/* Uses opacity and filter instead of transform to avoid position shifting */
+path.pulsating-hotspot {
   animation: pulse 2s infinite ease-in-out;
 }
 
@@ -43,4 +41,3 @@ body {
   --aggie-white: #ffffff;
   --aggie-gray: #f5f5f5;
 }
-

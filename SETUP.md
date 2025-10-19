@@ -114,8 +114,13 @@ Edit the `pathOptions` in `AggieFlowMap.jsx`:
 ### Pulsating Animation
 Adjust timing in `globals.css` or inline styles:
 ```css
-animation: pulse 2s infinite ease-in-out;
+.pulsating-hotspot > path {
+  animation: pulse 2s infinite ease-in-out;
+  transform-origin: center center;
+}
 ```
+
+**Important**: The animation must target the inner `<path>` element (`.pulsating-hotspot > path`) to avoid conflicts with Leaflet's transform-based positioning. Applying animation directly to the CircleMarker will cause the marker to shift position.
 
 ### Map Center & Zoom
 Edit `MapContainer` props in `AggieFlowMap.jsx`:
