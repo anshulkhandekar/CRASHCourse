@@ -881,7 +881,7 @@ const AggieFlowMap = () => {
 
       {/* CRASHCourse Banner */}
       <div className="app-banner">
-        <img src="/ReveilleBanner.png" alt="CRASHCourse" className="banner-image" />
+        <img src="/CrashCourseBanner.png" alt="CRASHCourse" className="banner-image" />
       </div>
 
 
