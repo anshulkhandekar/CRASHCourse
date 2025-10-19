@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Popup, Marker, useMapEvents } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+
+// Map Click Handler Component
+const MapClickHandler = ({ isReportingMode, onMapClick }) => {
+  useMapEvents({
+    click: (e) => {
+      if (isReportingMode) {
+        onMapClick(e.latlng);
+      }
+    },
+  });
+  return null;
+};
 
 const AggieFlowMap = () => {
   // State variables
@@ -10,6 +23,11 @@ const AggieFlowMap = () => {
   const [clusterHotspots, setClusterHotspots] = useState([]);
   const [filteredBuildings, setFilteredBuildings] = useState([]);
   const [filteredHotspots, setFilteredHotspots] = useState([]);
+  
+  // Collision reporting state
+  const [userReports, setUserReports] = useState([]);
+  const [isReportingMode, setIsReportingMode] = useState(false);
+  const [reportIdCounter, setReportIdCounter] = useState(1);
 
   // Days and time slots for dropdowns
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
@@ -62,6 +80,30 @@ const AggieFlowMap = () => {
     );
     setFilteredHotspots(filteredHS);
   }, [selectedDay, selectedTime, buildingData, clusterHotspots]);
+
+  // Handle map click for collision reporting
+  const handleMapClick = (latlng) => {
+    const newReport = {
+      id: reportIdCounter,
+      lat: latlng.lat,
+      lng: latlng.lng,
+      missRevImage: Math.random() < 0.5 ? '/InjuredMissRev.jpg' : '/injuredskatemissrev.jpg'
+    };
+    setUserReports([...userReports, newReport]);
+    setReportIdCounter(reportIdCounter + 1);
+    // Auto-disable reporting mode after placing a marker
+    setIsReportingMode(false);
+  };
+
+  // Create custom Miss Rev icon
+  const createMissRevIcon = (imageUrl) => {
+    return L.icon({
+      iconUrl: imageUrl,
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
+      className: 'miss-rev-animated'
+    });
+  };
 
   return (
     <div className="aggie-flow-container">
@@ -184,6 +226,67 @@ const AggieFlowMap = () => {
           animation: pulse 2s infinite ease-in-out;
         }
 
+        /* Miss Rev shake animation */
+        @keyframes shake-side {
+          0%, 100% {
+            transform: translateX(0) rotate(0deg);
+          }
+          25% {
+            transform: translateX(-3px) rotate(-1deg);
+          }
+          75% {
+            transform: translateX(3px) rotate(1deg);
+          }
+        }
+
+        :global(.miss-rev-animated) {
+          animation: shake-side 2s infinite ease-in-out;
+        }
+
+        /* Report button styling */
+        .report-button {
+          padding: 12px 20px;
+          background-color: #ff6b35;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+        }
+
+        .report-button:hover {
+          background-color: #ff5722;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+        }
+
+        .report-button.active {
+          background-color: #4caf50;
+          animation: pulse-button 1.5s infinite;
+        }
+
+        @keyframes pulse-button {
+          0%, 100% {
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+          }
+          50% {
+            box-shadow: 0 4px 16px rgba(76, 175, 80, 0.6);
+          }
+        }
+
+        .report-status {
+          font-size: 12px;
+          color: #666;
+          margin-top: 5px;
+          font-style: italic;
+        }
+
         /* Leaflet popup customization */
         :global(.leaflet-popup-content-wrapper) {
           border-radius: 8px;
@@ -246,6 +349,26 @@ const AggieFlowMap = () => {
             ))}
           </select>
         </div>
+
+        {/* Collision Reporting Button */}
+        <div className="control-group">
+          <button
+            className={`report-button ${isReportingMode ? 'active' : ''}`}
+            onClick={() => setIsReportingMode(!isReportingMode)}
+          >
+            🚨 {isReportingMode ? 'Click Map to Report' : 'Report Collision'}
+          </button>
+          {isReportingMode && (
+            <div className="report-status">
+              Click anywhere on the map to place a collision report
+            </div>
+          )}
+          {userReports.length > 0 && (
+            <div className="report-status">
+              {userReports.length} collision{userReports.length > 1 ? 's' : ''} reported
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Info/Legend Panel */}
@@ -258,6 +381,10 @@ const AggieFlowMap = () => {
         <div className="legend-item">
           <div className="legend-color red"></div>
           <span className="legend-text">Cluster Hotspots</span>
+        </div>
+        <div className="legend-item">
+          <div className="legend-color" style={{ backgroundColor: '#ff6b35' }}></div>
+          <span className="legend-text">🚨 User Reported Collisions</span>
         </div>
       </div>
 
@@ -342,6 +469,55 @@ const AggieFlowMap = () => {
               </CircleMarker>
             );
           })}
+
+          {/* Map Click Handler for Collision Reporting */}
+          <MapClickHandler isReportingMode={isReportingMode} onMapClick={handleMapClick} />
+
+          {/* Layer 3: User Reported Collisions */}
+          {userReports.map((report) => (
+            <React.Fragment key={`report-${report.id}`}>
+              {/* Collision Alert Circle */}
+              <CircleMarker
+                center={[report.lat, report.lng]}
+                radius={10}
+                pathOptions={{
+                  fillColor: '#ff6b35',
+                  fillOpacity: 0.6,
+                  color: '#ff4500',
+                  weight: 2,
+                }}
+                className="pulsating-fast"
+              >
+                <Popup>
+                  <div className="popup-content">
+                    <h4>🚨 Collision Report #{report.id}</h4>
+                    <p>
+                      <strong>Location:</strong> {report.lat.toFixed(5)}, {report.lng.toFixed(5)}
+                    </p>
+                    <p>
+                      <strong>Status:</strong> User Reported
+                    </p>
+                    <p style={{ fontSize: '11px', color: '#666', marginTop: '8px' }}>
+                      Please use caution in this area
+                    </p>
+                  </div>
+                </Popup>
+              </CircleMarker>
+
+              {/* Miss Rev Icon (offset slightly from collision marker) */}
+              <Marker
+                position={[report.lat + 0.0001, report.lng + 0.0001]}
+                icon={createMissRevIcon(report.missRevImage)}
+              >
+                <Popup>
+                  <div className="popup-content">
+                    <h4>🐶 Miss Rev on Alert!</h4>
+                    <p>Watching over collision site #{report.id}</p>
+                  </div>
+                </Popup>
+              </Marker>
+            </React.Fragment>
+          ))}
         </MapContainer>
       </div>
     </div>

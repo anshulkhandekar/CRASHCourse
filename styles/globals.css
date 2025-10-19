@@ -35,6 +35,39 @@ path.pulsating-hotspot {
   animation: pulse 2s infinite ease-in-out;
 }
 
+/* Miss Rev shake animation for collision reports */
+@keyframes shake-side {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  75% {
+    transform: translateX(3px) rotate(1deg);
+  }
+}
+
+.miss-rev-animated {
+  animation: shake-side 2s infinite ease-in-out;
+}
+
+/* Fast pulse animation for collision alerts */
+@keyframes pulse-fast {
+  0%, 100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 0 rgba(255, 107, 53, 0));
+  }
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 20px rgba(255, 107, 53, 1));
+  }
+}
+
+path.pulsating-fast {
+  animation: pulse-fast 1s infinite ease-in-out;
+}
+
 /* Maroon color theme for Texas A&M */
 :root {
   --aggie-maroon: #500000;

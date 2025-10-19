@@ -21,9 +21,10 @@ npm run dev
 
 ## ✨ Features
 
-### 📍 Dual-Layer Visualization
+### 📍 Multi-Layer Visualization
 - **Individual Buildings**: Small green markers showing building-level traffic
 - **Cluster Hotspots**: Large pulsating red markers indicating major congestion zones
+- **🚨 User Collision Reports**: Interactive collision reporting with animated Miss Rev mascot icons
 
 ### 🎛️ Interactive Controls
 - Filter by day of the week (Monday-Friday)
@@ -40,11 +41,14 @@ npm run dev
 ### 🗺️ Map Features
 - Zoom and pan controls
 - Click markers for detailed information
+- **Interactive collision reporting** - Click anywhere on the map to report incidents
 - Popup displays showing:
   - Building names
   - Cluster IDs
   - Traffic proportions
   - Time and day information
+  - Collision report details
+- **Miss Rev mascot animations** - Adorable animated icons watching over collision sites
 
 ## 📊 Data Visualization
 
@@ -256,6 +260,7 @@ pathOptions={{
 - [SETUP.md](./SETUP.md) - Detailed setup instructions
 - [QUICKSTART.md](./QUICKSTART.md) - 5-minute quick start guide
 - [Component README](./components/README.md) - Component API documentation
+- [COLLISION_REPORTING_FEATURE.md](./COLLISION_REPORTING_FEATURE.md) - 🚨 Interactive collision reporting guide
 - [ANIMATION_FIX_EXPLANATION.md](./ANIMATION_FIX_EXPLANATION.md) - ⚠️ Critical animation fix details
 - [CRITICAL_FIX_APPLIED.md](./CRITICAL_FIX_APPLIED.md) - Fix verification and checklist
 - [React Leaflet Docs](https://react-leaflet.js.org/)
