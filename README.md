@@ -1,8 +1,8 @@
-# 🎓 AggieFlow - Campus Traffic Visualization
+# 📡 Reveille's Radar - Campus Traffic Visualization
 
 A real-time campus traffic visualization tool built with React, Next.js, and Leaflet that displays building-level traffic and congestion hotspots on an interactive map.
 
-![AggieFlow Preview](https://img.shields.io/badge/Status-Active-success)
+![Reveille's Radar Preview](https://img.shields.io/badge/Status-Active-success)
 ![Next.js](https://img.shields.io/badge/Next.js-14.0-black)
 ![React](https://img.shields.io/badge/React-18.2-blue)
 ![Leaflet](https://img.shields.io/badge/Leaflet-1.9-green)
@@ -28,7 +28,11 @@ npm run dev
 
 ### 🎛️ Interactive Controls
 - Filter by day of the week (Monday-Friday)
-- Filter by time slot (8:00 AM - 6:10 PM)
+- **🛹 Skater-Slider**: Custom time slider with Miss Rev mascot thumb
+  - Dynamic time slots (50-min for MWF, 75-min for TTH)
+  - Visual tic marks with 12-hour AM/PM format
+  - Maroon/white gradient track
+- **ℹ️ Info Button**: Accessible help modal with usage instructions
 - Real-time data filtering and updates
 
 ### 🎨 Visual Design
@@ -121,15 +125,20 @@ Howdy_Hack/
 ## 🎯 Usage
 
 ### Basic Usage
-Simply open the application and use the dropdown controls to filter by day and time. The map will automatically update to show:
+Simply open the application and use the controls to filter by day and time. The map will automatically update to show:
 - Green markers for individual buildings
 - Red pulsating markers for congestion hotspots
+- Miss Rev icons for user-reported collision sites
 
 ### Interacting with the Map
-1. **Filter Data**: Use the day and time dropdowns in the control panel
-2. **View Details**: Click any marker to see detailed information
-3. **Navigate**: Zoom and pan to explore different areas
-4. **Legend**: Reference the legend in the bottom-left for marker meanings
+1. **Get Help**: Click the ℹ️ info button (top left) for detailed instructions
+2. **Select Day**: Use the day dropdown in the control panel
+3. **Navigate Time**: Use the Skater-Slider to slide through time slots (Miss Rev moves along the track!)
+4. **Report Collisions**: Click "Report Collision 🚨" then click anywhere on the map to mark a hazard
+5. **View Details**: Click any marker to see detailed information
+6. **Hover Miss Rev**: Hover over Miss Rev collision icons to zoom in and see details
+7. **REV-solve**: Click a Miss Rev marker and use the "REV-solve Collision" button to clear it
+8. **Navigate**: Zoom and pan to explore different areas
 
 ## 📋 Data Format
 
@@ -257,12 +266,21 @@ pathOptions={{
 
 ## 📄 Documentation
 
+### Setup & Usage
 - [SETUP.md](./SETUP.md) - Detailed setup instructions
 - [QUICKSTART.md](./QUICKSTART.md) - 5-minute quick start guide
 - [Component README](./components/README.md) - Component API documentation
+
+### Feature Guides
 - [COLLISION_REPORTING_FEATURE.md](./COLLISION_REPORTING_FEATURE.md) - 🚨 Interactive collision reporting guide
+- [REV-SOLVE_FEATURE.md](./REV-SOLVE_FEATURE.md) - ✅ Removing collision reports
+- [SKATER_SLIDER_FEATURE.md](./SKATER_SLIDER_FEATURE.md) - 🛹 Custom time slider with Miss Rev
+- [UI_ENHANCEMENTS.md](./UI_ENHANCEMENTS.md) - 🎨 Final UI polish and improvements
+
+### Technical Documentation
 - [ANIMATION_FIX_EXPLANATION.md](./ANIMATION_FIX_EXPLANATION.md) - ⚠️ Critical animation fix details
 - [CRITICAL_FIX_APPLIED.md](./CRITICAL_FIX_APPLIED.md) - Fix verification and checklist
+- [MISS_REV_AS_COLLISION_MARKER.md](./MISS_REV_AS_COLLISION_MARKER.md) - 🐶 Miss Rev positioning and hover effects
 - [React Leaflet Docs](https://react-leaflet.js.org/)
 - [Next.js Docs](https://nextjs.org/docs)
 

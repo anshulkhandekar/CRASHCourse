@@ -95,7 +95,7 @@ The exact nesting can vary based on:
 
 All CSS files have been updated to use the descendant selector:
 
-1. ✅ `components/AggieFlowMap.jsx` (line 187)
+1. ✅ `components/Reveille's RadarMap.jsx` (line 187)
 2. ✅ `styles/globals.css` (line 38)
 3. ✅ `styles/animations.css` (lines 35, 63, 87, 339, 347, 355)
 

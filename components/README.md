@@ -1,8 +1,8 @@
-# AggieFlowMap Component
+# Reveille's RadarMap Component
 
 ## Description
 
-The `AggieFlowMap` component is a dual-layer React Leaflet visualization that displays campus traffic patterns with real-time filtering capabilities.
+The `Reveille's RadarMap` component is a dual-layer React Leaflet visualization that displays campus traffic patterns with real-time filtering capabilities.
 
 ## Features
 
@@ -23,10 +23,10 @@ The `AggieFlowMap` component is a dual-layer React Leaflet visualization that di
 ## Usage
 
 ```jsx
-import AggieFlowMap from '../components/AggieFlowMap';
+import Reveille's RadarMap from '../components/Reveille's RadarMap';
 
 export default function Page() {
-  return <AggieFlowMap />;
+  return <Reveille's RadarMap />;
 }
 ```
 
@@ -35,7 +35,7 @@ export default function Page() {
 ```jsx
 import dynamic from 'next/dynamic';
 
-const AggieFlowMap = dynamic(() => import('../components/AggieFlowMap'), {
+const Reveille's RadarMap = dynamic(() => import('../components/Reveille's RadarMap'), {
   ssr: false
 });
 ```
@@ -57,8 +57,8 @@ Required fields:
 - `Latitude`: number
 - `Longitude`: number
 
-### Hotspot Data (AggieFlow_Cluster_Hotspots.json)
-Located in `/public/AggieFlow_Cluster_Hotspots.json`
+### Hotspot Data (Reveille's Radar_Cluster_Hotspots.json)
+Located in `/public/Reveille's Radar_Cluster_Hotspots.json`
 
 Required fields:
 - `Day`: string (Monday-Friday)
@@ -106,7 +106,7 @@ Pulsating effect defined with CSS keyframes:
 ## Component Structure
 
 ```
-AggieFlowMap
+Reveille's RadarMap
 ├── State Management (useState)
 │   ├── selectedDay
 │   ├── selectedTime

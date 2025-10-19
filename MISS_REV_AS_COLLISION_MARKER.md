@@ -532,7 +532,7 @@ A **cleaner, simpler, better collision reporting system** where Miss Rev takes c
 **Click REV-solve** → Removes the collision  
 **Refresh browser** → See the new design!  
 
-**File Changed:** `components/AggieFlowMap.jsx`, `styles/globals.css`  
+**File Changed:** `components/Reveille's RadarMap.jsx`, `styles/globals.css`  
 **Lines**: ~100 lines simplified  
 **Performance**: +50% improvement  
 **User satisfaction**: 📈 Way better!

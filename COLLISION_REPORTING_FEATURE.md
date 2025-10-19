@@ -2,7 +2,7 @@
 
 ## Overview
 
-The AggieFlow map now includes a user-driven collision reporting system with animated Miss Rev mascot icons to mark reported incidents. This feature allows users to interactively report traffic collisions by clicking on the map.
+The Reveille's Radar map now includes a user-driven collision reporting system with animated Miss Rev mascot icons to mark reported incidents. This feature allows users to interactively report traffic collisions by clicking on the map.
 
 ## Features
 
@@ -357,7 +357,7 @@ Watching over collision site #1
 
 ## Files Modified
 
-1. **`components/AggieFlowMap.jsx`**
+1. **`components/Reveille's RadarMap.jsx`**
    - Added collision reporting state
    - Added MapClickHandler component
    - Added collision marker rendering
@@ -429,7 +429,7 @@ Watching over collision site #1
 
 ## Summary
 
-The Collision Reporting feature adds an interactive, user-driven layer to AggieFlow with:
+The Collision Reporting feature adds an interactive, user-driven layer to Reveille's Radar with:
 
 ✅ **One-click reporting** via map interaction  
 ✅ **Visual alerts** with orange pulsating markers  

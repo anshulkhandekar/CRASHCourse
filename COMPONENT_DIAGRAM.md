@@ -1,10 +1,10 @@
-# 🗺️ AggieFlow Component Architecture
+# 🗺️ Reveille's Radar Component Architecture
 
 ## Visual Component Structure
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         AggieFlowMap                             │
+│                         Reveille's RadarMap                             │
 │                      (Main Component)                            │
 └─────────────────────────────────────────────────────────────────┘
                               │
@@ -386,7 +386,7 @@ pages/index.jsx
     │ import (dynamic, SSR disabled)
     │
     ▼
-components/AggieFlowMap.jsx
+components/Reveille's RadarMap.jsx
     │
     ├─→ import { MapContainer, TileLayer, CircleMarker, Popup }
     │   from 'react-leaflet'
@@ -463,5 +463,5 @@ Extended Animations (animations.css)
 
 ---
 
-This architecture provides a clear separation of concerns, efficient data flow, and optimal rendering performance for the AggieFlow map visualization.
+This architecture provides a clear separation of concerns, efficient data flow, and optimal rendering performance for the Reveille's Radar map visualization.
 

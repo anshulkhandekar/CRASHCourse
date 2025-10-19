@@ -339,7 +339,7 @@ Perfect Placement at Zoom 16:
 
 ## 📞 Quick Reference
 
-**File**: `components/AggieFlowMap.jsx`  
+**File**: `components/Reveille's RadarMap.jsx`  
 **Line**: ~561  
 **Code**: `position={[report.lat + 0.00003, report.lng + 0.00003]}`  
 **Distance**: ~4.4 meters diagonal (3.3m N + 2.9m E)  

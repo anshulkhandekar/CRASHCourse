@@ -222,7 +222,7 @@ Time: 0s    0.5s   1.0s   1.5s   2.0s
 
 ### Files Modified
 
-#### 1. `/components/AggieFlowMap.jsx`
+#### 1. `/components/Reveille's RadarMap.jsx`
 
 **Added:**
 ```javascript

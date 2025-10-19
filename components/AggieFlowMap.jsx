@@ -151,6 +151,31 @@ const AggieFlowMap = () => {
     e.target.style.setProperty('--slider-progress', `${progress}%`);
   };
 
+  // Convert 24-hour time to 12-hour AM/PM format
+  const formatTime12Hour = (time24) => {
+    const [hours24, minutes] = time24.split(':').map(num => parseInt(num));
+    const period = hours24 >= 12 ? 'PM' : 'AM';
+    const hours12 = hours24 % 12 || 12; // Convert 0 to 12 for midnight
+    return { time: `${hours12}:${minutes.toString().padStart(2, '0')}`, period };
+  };
+
+  // Convert full time range to 12-hour format (e.g., "13:50-14:40" -> "1:50-2:40 PM")
+  const formatTimeRange12Hour = (timeRange) => {
+    const [startTime, endTime] = timeRange.split('-');
+    const start = formatTime12Hour(startTime);
+    const end = formatTime12Hour(endTime);
+    
+    // If both times have same period, only show it once at the end
+    if (start.period === end.period) {
+      return `${start.time}-${end.time} ${end.period}`;
+    } else {
+      return `${start.time} ${start.period}-${end.time} ${end.period}`;
+    }
+  };
+
+  // Info modal state
+  const [showInfo, setShowInfo] = useState(false);
+
   // Create custom Miss Rev icon as the collision marker itself
   const createMissRevIcon = (imageUrl) => {
     return L.divIcon({
@@ -501,8 +526,8 @@ const AggieFlowMap = () => {
         .slider-tics {
           position: relative;
           width: 100%;
-          height: 40px;
-          margin-top: 15px;
+          height: 30px;
+          margin-top: 8px;
         }
 
         .tic-mark {
@@ -515,28 +540,40 @@ const AggieFlowMap = () => {
 
         .tic-line {
           width: 2px;
-          height: 10px;
+          height: 8px;
           background-color: #ccc;
-          margin-bottom: 5px;
+          margin-bottom: 3px;
         }
 
         .tic-mark.active .tic-line {
           width: 3px;
-          height: 15px;
+          height: 12px;
           background-color: #500000;
         }
 
         .tic-label {
-          font-size: 10px;
+          font-size: 9px;
           color: #666;
           white-space: nowrap;
           font-weight: 500;
+          text-align: center;
+          line-height: 1.2;
+        }
+
+        .tic-period {
+          font-size: 7px;
+          font-weight: 600;
+          margin-top: 1px;
         }
 
         .tic-mark.active .tic-label {
-          font-size: 11px;
+          font-size: 10px;
           color: #500000;
           font-weight: 700;
+        }
+
+        .tic-mark.active .tic-period {
+          font-size: 8px;
         }
 
         .schedule-type {
@@ -544,8 +581,8 @@ const AggieFlowMap = () => {
           font-size: 12px;
           color: #500000;
           font-weight: 600;
-          margin-top: 10px;
-          padding: 8px;
+          margin-top: 2px;
+          padding: 6px;
           background: rgba(80, 0, 0, 0.1);
           border-radius: 4px;
         }
@@ -608,7 +645,176 @@ const AggieFlowMap = () => {
         .popup-content strong {
           color: #000;
         }
+        /* Info Button */
+        .info-button {
+          position: absolute;
+          top: 80px;
+          left: 10px;
+          z-index: 1000;
+          width: 40px;
+          height: 40px;
+          background: white;
+          border: 2px solid #500000;
+          border-radius: 4px;
+          font-size: 20px;
+          cursor: pointer;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+          transition: all 0.3s ease;
+        }
+
+        .info-button:hover {
+          background: #500000;
+          transform: scale(1.1);
+        }
+
+        /* Info Modal */
+        .info-modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10000;
+          animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        .info-modal {
+          background: white;
+          border-radius: 12px;
+          padding: 30px;
+          max-width: 600px;
+          max-height: 80vh;
+          overflow-y: auto;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+          position: relative;
+          animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+          from {
+            transform: translateY(-50px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        .close-modal {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          background: none;
+          border: none;
+          font-size: 28px;
+          cursor: pointer;
+          color: #666;
+          line-height: 1;
+          padding: 0;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          transition: all 0.2s ease;
+        }
+
+        .close-modal:hover {
+          background: #f0f0f0;
+          color: #500000;
+        }
+
+        .info-modal h2 {
+          color: #500000;
+          margin: 0 0 20px 0;
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .info-content {
+          color: #333;
+        }
+
+        .info-content section {
+          margin-bottom: 20px;
+        }
+
+        .info-content h3 {
+          color: #500000;
+          font-size: 18px;
+          margin: 0 0 10px 0;
+        }
+
+        .info-content ul {
+          margin: 0;
+          padding-left: 20px;
+        }
+
+        .info-content li {
+          margin: 8px 0;
+          line-height: 1.6;
+        }
+
+        .info-content p {
+          margin: 5px 0;
+          line-height: 1.6;
+        }
+
+        .info-content strong {
+          font-weight: 600;
+        }
       `}</style>
+
+      {/* Info Button */}
+      <button className="info-button" onClick={() => setShowInfo(true)}>
+        ℹ️
+      </button>
+
+      {/* Info Modal */}
+      {showInfo && (
+        <div className="info-modal-overlay" onClick={() => setShowInfo(false)}>
+          <div className="info-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={() => setShowInfo(false)}>✕</button>
+            <h2>📡 Welcome to Reveille's Radar!</h2>
+            <div className="info-content">
+              <section>
+                <h3>📍 How to Use:</h3>
+                <ul>
+                  <li><strong>Select Day & Time:</strong> Use the dropdowns to see campus traffic patterns</li>
+                  <li><strong>Skater-Slider:</strong> Slide Miss Rev through time to see how traffic changes</li>
+                  <li><strong>Report Collisions:</strong> Click "Report Collision 🚨" then click on the map to mark a hazard</li>
+                  <li><strong>Hover over Miss Rev:</strong> When you see Miss Rev at a collision site, hover to zoom in!</li>
+                  <li><strong>REV-solve:</strong> Click on a Miss Rev marker and use the "REV-solve Collision" button to clear it</li>
+                </ul>
+              </section>
+              <section>
+                <h3>🎨 Understanding the Map:</h3>
+                <ul>
+                  <li><strong style={{ color: '#28a745' }}>🟢 Green Circles:</strong> Individual buildings with foot traffic</li>
+                  <li><strong style={{ color: '#dc3545' }}>🔴 Large Pulsating Red:</strong> Major congestion hotspots (bigger = more crowded)</li>
+                  <li><strong style={{ color: '#ff6b35' }}>🐶 Miss Rev Icons:</strong> User-reported collision sites that need attention</li>
+                </ul>
+              </section>
+              <section>
+                <h3>📚 Class Schedules:</h3>
+                <p><strong>MWF:</strong> 50-minute classes (Monday, Wednesday, Friday)</p>
+                <p><strong>TTH:</strong> 75-minute classes (Tuesday, Thursday)</p>
+              </section>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Control Panel */}
       <div className="controls">
@@ -634,7 +840,7 @@ const AggieFlowMap = () => {
           {/* Current Time Display */}
           <div className="current-time-display">
             <span className="time-label">Time:</span>
-            <span className="time-value">{selectedTime}</span>
+            <span className="time-value">{formatTimeRange12Hour(selectedTime)}</span>
           </div>
           
           {/* Custom Slider with Miss Rev Thumb */}
@@ -652,16 +858,23 @@ const AggieFlowMap = () => {
             
             {/* Tic Marks and Labels */}
             <div className="slider-tics">
-              {availableTimes.map((time, index) => (
-                <div
-                  key={time}
-                  className={`tic-mark ${index === currentTimeIndex ? 'active' : ''}`}
-                  style={{ left: `${(index / (availableTimes.length - 1)) * 100}%` }}
-                >
-                  <div className="tic-line"></div>
-                  <div className="tic-label">{time.split('-')[0]}</div>
-                </div>
-              ))}
+              {availableTimes.map((time, index) => {
+                const startTime = time.split('-')[0];
+                const { time: time12, period } = formatTime12Hour(startTime);
+                return (
+                  <div
+                    key={time}
+                    className={`tic-mark ${index === currentTimeIndex ? 'active' : ''}`}
+                    style={{ left: `${(index / (availableTimes.length - 1)) * 100}%` }}
+                  >
+                    <div className="tic-line"></div>
+                    <div className="tic-label">
+                      {time12}
+                      <div className="tic-period">{period}</div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
           
@@ -785,7 +998,7 @@ const AggieFlowMap = () => {
                       <strong>Day:</strong> {hotspot.Day}
                     </p>
                     <p>
-                      <strong>Time:</strong> {hotspot['Time Slot']}
+                      <strong>Time:</strong> {formatTimeRange12Hour(hotspot['Time Slot'])}
                     </p>
                   </div>
                 </Popup>

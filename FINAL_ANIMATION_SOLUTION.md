@@ -156,7 +156,7 @@ Both properties are GPU-accelerated:
 
 All animation keyframes updated to remove transform:
 
-1. ✅ `components/AggieFlowMap.jsx` (lines 170-179)
+1. ✅ `components/Reveille's RadarMap.jsx` (lines 170-179)
 2. ✅ `styles/globals.css` (lines 21-30)
 3. ✅ `styles/animations.css` (lines 18-27, 43-52, 62-71)
 

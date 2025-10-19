@@ -1,15 +1,15 @@
-# 📋 AggieFlow Implementation Summary
+# 📋 Reveille's Radar Implementation Summary
 
 ## ✅ Complete Implementation Delivered
 
-This document summarizes the complete AggieFlow React Leaflet map component implementation.
+This document summarizes the complete Reveille's Radar React Leaflet map component implementation.
 
 ---
 
 ## 📦 What Was Built
 
 ### 🎯 Core Component
-**`components/AggieFlowMap.jsx`** - Full-featured map visualization with:
+**`components/Reveille's RadarMap.jsx`** - Full-featured map visualization with:
 - ✅ Dual-layer rendering (buildings + hotspots)
 - ✅ Day and time filtering with dropdowns
 - ✅ Dynamic data loading from JSON files
@@ -67,7 +67,7 @@ This document summarizes the complete AggieFlow React Leaflet map component impl
 Howdy_Hack/
 │
 ├── components/
-│   ├── AggieFlowMap.jsx              ✅ Main map component (320 lines)
+│   ├── Reveille's RadarMap.jsx              ✅ Main map component (320 lines)
 │   └── README.md                     ✅ Component documentation
 │
 ├── pages/
@@ -80,7 +80,7 @@ Howdy_Hack/
 │
 ├── public/
 │   ├── Aggie_Flow_Dataset.json       ✅ Building data (copied)
-│   └── AggieFlow_Cluster_Hotspots.json ✅ Hotspot data (copied)
+│   └── Reveille's Radar_Cluster_Hotspots.json ✅ Hotspot data (copied)
 │
 ├── package.json                      ✅ Dependencies configured
 ├── next.config.js                    ✅ Next.js configuration
@@ -291,7 +291,7 @@ npm start
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `AggieFlowMap.jsx` | 320 | Main component with all logic |
+| `Reveille's RadarMap.jsx` | 320 | Main component with all logic |
 | `index.jsx` | 30 | Home page wrapper |
 | `_app.jsx` | 5 | App configuration |
 | `globals.css` | 45 | Global styles + basic animation |
@@ -397,7 +397,7 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:3000 and explore your AggieFlow map!
+Then open http://localhost:3000 and explore your Reveille's Radar map!
 
 ---
 

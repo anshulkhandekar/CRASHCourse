@@ -515,7 +515,7 @@ Sparkle trail when sliding!
 **Colors**: Maroon = past, White = future  
 
 **Files Modified**:
-- `components/AggieFlowMap.jsx` (slider implementation)
+- `components/Reveille's RadarMap.jsx` (slider implementation)
 - `public/MissRevSlider.png` (thumb image)
 
 ---

@@ -2,7 +2,7 @@
 
 ## ✅ Implementation Complete
 
-Successfully added interactive collision reporting with animated Miss Rev mascot icons to the AggieFlow map component.
+Successfully added interactive collision reporting with animated Miss Rev mascot icons to the Reveille's Radar map component.
 
 ---
 
@@ -37,7 +37,7 @@ Successfully added interactive collision reporting with animated Miss Rev mascot
 
 ## 📁 Files Modified
 
-### `/components/AggieFlowMap.jsx`
+### `/components/Reveille's RadarMap.jsx`
 **Lines Added**: ~150
 
 **Changes**:

@@ -1,6 +1,6 @@
-# 🚀 AggieFlow Quick Start Guide
+# 🚀 Reveille's Radar Quick Start Guide
 
-Get up and running with AggieFlow in 5 minutes!
+Get up and running with Reveille's Radar in 5 minutes!
 
 ## ⚡ Fastest Setup (3 Commands)
 
@@ -26,11 +26,11 @@ A fully functional React Leaflet map with:
 
 ```
 Howdy_Hack/
-├── components/AggieFlowMap.jsx    ← Main map component
+├── components/Reveille's RadarMap.jsx    ← Main map component
 ├── pages/index.jsx                ← Home page
 ├── public/                        ← Data files (already set up)
 │   ├── Aggie_Flow_Dataset.json
-│   └── AggieFlow_Cluster_Hotspots.json
+│   └── Reveille's Radar_Cluster_Hotspots.json
 └── styles/                        ← CSS & animations
 ```
 
@@ -71,13 +71,13 @@ Howdy_Hack/
 ## 🔧 Common Customizations
 
 ### Change Map Center
-**File**: `components/AggieFlowMap.jsx` (Line ~146)
+**File**: `components/Reveille's RadarMap.jsx` (Line ~146)
 ```jsx
 <MapContainer center={[30.6174, -96.3402]} zoom={14}>
 ```
 
 ### Adjust Hotspot Size
-**File**: `components/AggieFlowMap.jsx` (Line ~188)
+**File**: `components/Reveille's RadarMap.jsx` (Line ~188)
 ```jsx
 const radius = 30 + (hotspot.Hotspot_Proportion * 300);
 ```
@@ -112,7 +112,7 @@ fillColor: '#dc3545'  // Red
 ## 📚 File Reference
 
 ### Core Files (You'll Edit These)
-- `components/AggieFlowMap.jsx` - Main component
+- `components/Reveille's RadarMap.jsx` - Main component
 - `styles/globals.css` - Global styles
 - `styles/animations.css` - Animation library
 
@@ -123,7 +123,7 @@ fillColor: '#dc3545'  // Red
 
 ### Data Files (Read-Only)
 - `public/Aggie_Flow_Dataset.json` - Building data
-- `public/AggieFlow_Cluster_Hotspots.json` - Hotspot data
+- `public/Reveille's Radar_Cluster_Hotspots.json` - Hotspot data
 
 ## 🎓 How It Works
 
@@ -132,7 +132,7 @@ fillColor: '#dc3545'  // Red
 useEffect(() => {
   // Fetch both JSON files on component mount
   fetch('/Aggie_Flow_Dataset.json')
-  fetch('/AggieFlow_Cluster_Hotspots.json')
+  fetch('/Reveille's Radar_Cluster_Hotspots.json')
 }, [])
 ```
 
@@ -194,7 +194,7 @@ useEffect(() => {
 - [ ] Read popup information
 
 ### Intermediate
-- [ ] Modify colors in `AggieFlowMap.jsx`
+- [ ] Modify colors in `Reveille's RadarMap.jsx`
 - [ ] Change pulse speed in `globals.css`
 - [ ] Adjust hotspot sizing formula
 - [ ] Customize control panel styling

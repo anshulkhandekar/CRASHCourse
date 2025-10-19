@@ -16,7 +16,7 @@ CSS animations using `transform` were clashing with Leaflet's positioning system
 
 ## Files Modified
 
-### 1. ✅ `/components/AggieFlowMap.jsx` (Line 185-189)
+### 1. ✅ `/components/Reveille's RadarMap.jsx` (Line 185-189)
 ```css
 /* CSS FIX: Apply animation to the inner SVG path element to avoid clashing with Leaflet's positioning */
 :global(.pulsating-hotspot > path) {

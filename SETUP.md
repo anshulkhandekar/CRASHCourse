@@ -1,7 +1,7 @@
-# AggieFlow Map Setup Guide
+# Reveille's Radar Map Setup Guide
 
 ## Overview
-AggieFlow is a React Leaflet-based visualization tool that displays campus traffic data with two layers:
+Reveille's Radar is a React Leaflet-based visualization tool that displays campus traffic data with two layers:
 1. **Individual Buildings** - Small green markers showing building-level traffic
 2. **Cluster Hotspots** - Large pulsating red markers showing major congestion zones
 
@@ -23,7 +23,7 @@ AggieFlow is a React Leaflet-based visualization tool that displays campus traff
    ```bash
    mkdir -p public
    cp ../Aggie_Flow_Dataset.json public/
-   cp ../AggieFlow_Cluster_Hotspots.json public/
+   cp ../Reveille's Radar_Cluster_Hotspots.json public/
    ```
 
 3. **Run Development Server**
@@ -40,7 +40,7 @@ AggieFlow is a React Leaflet-based visualization tool that displays campus traff
 ```
 Howdy_Hack/
 ├── components/
-│   └── AggieFlowMap.jsx       # Main map component
+│   └── Reveille's RadarMap.jsx       # Main map component
 ├── pages/
 │   ├── _app.jsx               # App wrapper
 │   └── index.jsx              # Home page
@@ -48,7 +48,7 @@ Howdy_Hack/
 │   └── globals.css            # Global styles
 ├── public/
 │   ├── Aggie_Flow_Dataset.json           # Building data
-│   └── AggieFlow_Cluster_Hotspots.json   # Hotspot data
+│   └── Reveille's Radar_Cluster_Hotspots.json   # Hotspot data
 ├── package.json
 └── next.config.js
 ```
@@ -92,7 +92,7 @@ Howdy_Hack/
 }
 ```
 
-### Cluster Hotspots (AggieFlow_Cluster_Hotspots.json)
+### Cluster Hotspots (Reveille's Radar_Cluster_Hotspots.json)
 ```json
 {
   "Day": "string",
@@ -107,7 +107,7 @@ Howdy_Hack/
 ## Customization
 
 ### Colors
-Edit the `pathOptions` in `AggieFlowMap.jsx`:
+Edit the `pathOptions` in `Reveille's RadarMap.jsx`:
 - Buildings: Line 175-180
 - Hotspots: Line 194-199
 
@@ -123,7 +123,7 @@ Adjust timing in `globals.css` or inline styles:
 **Important**: The animation must target the inner `<path>` element (`.pulsating-hotspot > path`) to avoid conflicts with Leaflet's transform-based positioning. Applying animation directly to the CircleMarker will cause the marker to shift position.
 
 ### Map Center & Zoom
-Edit `MapContainer` props in `AggieFlowMap.jsx`:
+Edit `MapContainer` props in `Reveille's RadarMap.jsx`:
 ```jsx
 <MapContainer
   center={[30.6174, -96.3402]}  // Texas A&M coordinates
