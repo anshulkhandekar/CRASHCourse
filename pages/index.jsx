@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AggieFlow - Campus Traffic Visualization</title>
+        <title>CRASHCourse - Campus Traffic Visualization</title>
         <meta name="description" content="Real-time campus traffic and congestion visualization" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
