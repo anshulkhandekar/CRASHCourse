@@ -29,9 +29,11 @@ const AggieFlowMap = () => {
   const [isReportingMode, setIsReportingMode] = useState(false);
   const [reportIdCounter, setReportIdCounter] = useState(1);
 
-  // Days and time slots for dropdowns
+  // Days for dropdown
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-  const timeSlots = [
+  
+  // Time slot definitions - MWF (50-minute) vs TTH (75-minute)
+  const MWF_TIMES = [
     '8:00-8:50',
     '9:10-10:00',
     '10:20-11:10',
@@ -42,6 +44,24 @@ const AggieFlowMap = () => {
     '16:10-17:00',
     '17:20-18:10'
   ];
+  
+  const TTH_TIMES = [
+    '8:00-9:15',
+    '9:35-10:50',
+    '11:10-12:25',
+    '12:45-14:00',
+    '14:20-15:35',
+    '15:55-17:10',
+    '17:30-18:45'
+  ];
+  
+  // Dynamic time slots based on selected day
+  const availableTimes = (selectedDay === 'Tuesday' || selectedDay === 'Thursday') 
+    ? TTH_TIMES 
+    : MWF_TIMES;
+  
+  // Get current time slot index for slider
+  const currentTimeIndex = availableTimes.indexOf(selectedTime);
 
   // Load data on component mount
   useEffect(() => {
@@ -63,6 +83,27 @@ const AggieFlowMap = () => {
 
     loadData();
   }, []);
+
+  // CRITICAL FIX: Reset time to first slot when day changes (fixes TTH loading issue)
+  useEffect(() => {
+    const newAvailableTimes = (selectedDay === 'Tuesday' || selectedDay === 'Thursday') 
+      ? TTH_TIMES 
+      : MWF_TIMES;
+    
+    // If current time is not in the new available times, reset to first slot
+    if (!newAvailableTimes.includes(selectedTime)) {
+      setSelectedTime(newAvailableTimes[0]);
+    }
+  }, [selectedDay]);
+
+  // Update slider gradient when time or day changes
+  useEffect(() => {
+    const slider = document.getElementById('time-slider');
+    if (slider && currentTimeIndex !== -1) {
+      const progress = (currentTimeIndex / (availableTimes.length - 1)) * 100;
+      slider.style.setProperty('--slider-progress', `${progress}%`);
+    }
+  }, [currentTimeIndex, availableTimes.length]);
 
   // Filter data based on selected day and time
   useEffect(() => {
@@ -98,6 +139,16 @@ const AggieFlowMap = () => {
   // Remove/resolve a collision report
   const handleResolveCollision = (reportId) => {
     setUserReports(userReports.filter(report => report.id !== reportId));
+  };
+
+  // Handle slider change for time selection
+  const handleSliderChange = (e) => {
+    const newIndex = parseInt(e.target.value);
+    setSelectedTime(availableTimes[newIndex]);
+    
+    // Update slider gradient progress
+    const progress = (newIndex / (availableTimes.length - 1)) * 100;
+    e.target.style.setProperty('--slider-progress', `${progress}%`);
   };
 
   // Create custom Miss Rev icon as the collision marker itself
@@ -333,6 +384,172 @@ const AggieFlowMap = () => {
           font-style: italic;
         }
 
+        /* Skater-Slider Styling */
+        .skater-slider-container {
+          padding: 20px 0;
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          border-radius: 8px;
+          padding: 15px;
+        }
+
+        .skater-slider-container label {
+          font-size: 16px;
+          font-weight: 700;
+          color: #500000;
+          margin-bottom: 10px;
+          display: block;
+        }
+
+        .current-time-display {
+          background: #500000;
+          color: white;
+          padding: 10px 15px;
+          border-radius: 6px;
+          margin: 10px 0;
+          text-align: center;
+          font-weight: 600;
+        }
+
+        .time-label {
+          font-size: 12px;
+          opacity: 0.9;
+          margin-right: 8px;
+        }
+
+        .time-value {
+          font-size: 18px;
+          font-weight: 700;
+        }
+
+        .slider-wrapper {
+          position: relative;
+          padding: 20px 10px 60px 10px;
+        }
+
+        /* Custom Range Slider with Miss Rev Thumb */
+        .miss-rev-slider {
+          width: 100%;
+          height: 8px;
+          border-radius: 4px;
+          background: linear-gradient(to right, 
+            #500000 0%, 
+            #500000 var(--slider-progress, 50%), 
+            #ffffff var(--slider-progress, 50%), 
+            #ffffff 100%);
+          outline: none;
+          -webkit-appearance: none;
+          appearance: none;
+          cursor: pointer;
+        }
+
+        /* Webkit browsers (Chrome, Safari) */
+        .miss-rev-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-image: url('/MissRevSlider.png');
+          background-size: cover;
+          background-position: center;
+          cursor: grab;
+          border: 3px solid #500000;
+          box-shadow: 0 2px 10px rgba(80, 0, 0, 0.5);
+          transition: transform 0.2s ease;
+        }
+
+        .miss-rev-slider::-webkit-slider-thumb:hover {
+          transform: scale(1.15);
+        }
+
+        .miss-rev-slider::-webkit-slider-thumb:active {
+          cursor: grabbing;
+          transform: scale(1.05);
+        }
+
+        /* Firefox */
+        .miss-rev-slider::-moz-range-thumb {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-image: url('/MissRevSlider.png');
+          background-size: cover;
+          background-position: center;
+          cursor: grab;
+          border: 3px solid #500000;
+          box-shadow: 0 2px 10px rgba(80, 0, 0, 0.5);
+          transition: transform 0.2s ease;
+        }
+
+        .miss-rev-slider::-moz-range-thumb:hover {
+          transform: scale(1.15);
+        }
+
+        .miss-rev-slider::-moz-range-thumb:active {
+          cursor: grabbing;
+          transform: scale(1.05);
+        }
+
+        /* Firefox track */
+        .miss-rev-slider::-moz-range-track {
+          height: 8px;
+          border-radius: 4px;
+          background: #ffffff;
+        }
+
+        /* Tic Marks and Labels */
+        .slider-tics {
+          position: relative;
+          width: 100%;
+          height: 40px;
+          margin-top: 15px;
+        }
+
+        .tic-mark {
+          position: absolute;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .tic-line {
+          width: 2px;
+          height: 10px;
+          background-color: #ccc;
+          margin-bottom: 5px;
+        }
+
+        .tic-mark.active .tic-line {
+          width: 3px;
+          height: 15px;
+          background-color: #500000;
+        }
+
+        .tic-label {
+          font-size: 10px;
+          color: #666;
+          white-space: nowrap;
+          font-weight: 500;
+        }
+
+        .tic-mark.active .tic-label {
+          font-size: 11px;
+          color: #500000;
+          font-weight: 700;
+        }
+
+        .schedule-type {
+          text-align: center;
+          font-size: 12px;
+          color: #500000;
+          font-weight: 600;
+          margin-top: 10px;
+          padding: 8px;
+          background: rgba(80, 0, 0, 0.1);
+          border-radius: 4px;
+        }
+
         /* REV-solve button styling */
         .resolve-button {
           padding: 8px 16px;
@@ -410,19 +627,50 @@ const AggieFlowMap = () => {
           </select>
         </div>
 
-        <div className="control-group">
-          <label htmlFor="time-select">Select Time:</label>
-          <select
-            id="time-select"
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
-          >
-            {timeSlots.map((time) => (
-              <option key={time} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
+        {/* Skater-Slider for Time Selection */}
+        <div className="control-group skater-slider-container">
+          <label htmlFor="time-slider">🛹 Skate Through Time:</label>
+          
+          {/* Current Time Display */}
+          <div className="current-time-display">
+            <span className="time-label">Time:</span>
+            <span className="time-value">{selectedTime}</span>
+          </div>
+          
+          {/* Custom Slider with Miss Rev Thumb */}
+          <div className="slider-wrapper">
+            <input
+              type="range"
+              id="time-slider"
+              className="miss-rev-slider"
+              min={0}
+              max={availableTimes.length - 1}
+              value={currentTimeIndex === -1 ? 0 : currentTimeIndex}
+              onChange={handleSliderChange}
+              step={1}
+            />
+            
+            {/* Tic Marks and Labels */}
+            <div className="slider-tics">
+              {availableTimes.map((time, index) => (
+                <div
+                  key={time}
+                  className={`tic-mark ${index === currentTimeIndex ? 'active' : ''}`}
+                  style={{ left: `${(index / (availableTimes.length - 1)) * 100}%` }}
+                >
+                  <div className="tic-line"></div>
+                  <div className="tic-label">{time.split('-')[0]}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Schedule Type Indicator */}
+          <div className="schedule-type">
+            {(selectedDay === 'Tuesday' || selectedDay === 'Thursday') 
+              ? '📚 TTH Schedule (75-min classes)' 
+              : '📚 MWF Schedule (50-min classes)'}
+          </div>
         </div>
 
         {/* Collision Reporting Button */}
