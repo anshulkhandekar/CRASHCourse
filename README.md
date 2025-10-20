@@ -145,7 +145,7 @@ Simply open the application and use the controls to filter by day and time. The 
 8. **REV-solve**: Click a Miss Rev marker and use the "REV-solve Collision" button to clear it
 9. **Navigate**: Zoom and pan to explore different areas
 
-## 📋 Data Format
+## Data Format
 
 ### Building Data Structure
 ```json
@@ -269,7 +269,7 @@ pathOptions={{
 - [ ] Mobile app version
 - [ ] Real-time data integration
 
-## 📄 Documentation
+## Documentation
 
 ### Setup & Usage
 - [SETUP.md](./SETUP.md) - Detailed setup instructions
