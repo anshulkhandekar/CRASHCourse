@@ -1,4 +1,4 @@
-# 📡 CRASHCourse - Campus Traffic Visualization
+# CRASHCourse - Campus Traffic Visualization
 
 A real-time campus traffic visualization tool built with React, Next.js, and Leaflet that displays building-level traffic and congestion hotspots on an interactive map.
 
@@ -7,7 +7,7 @@ A real-time campus traffic visualization tool built with React, Next.js, and Lea
 ![React](https://img.shields.io/badge/React-18.2-blue)
 ![Leaflet](https://img.shields.io/badge/Leaflet-1.9-green)
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install dependencies
@@ -19,35 +19,35 @@ npm run dev
 # Open browser to http://localhost:3000
 ```
 
-## ✨ Features
+## Features
 
-### 📍 Multi-Layer Visualization
+### Multi-Layer Visualization
 - **Individual Buildings**: Small green markers showing building-level traffic
 - **Cluster Hotspots**: Large pulsating red markers indicating major congestion zones
-- **🚨 User Collision Reports**: Interactive collision reporting with animated Miss Rev mascot icons
+- **User Collision Reports**: Interactive collision reporting with animated Miss Rev mascot icons
 
-### 🎛️ Interactive Controls
+### Interactive Controls
 - Filter by day of the week (Monday-Friday)
-- **🛹 Skater-Slider**: Custom time slider with Miss Rev mascot thumb
+- **Skater-Slider**: Custom time slider with Miss Rev mascot thumb
   - Dynamic time slots (50-min for MWF, 75-min for TTH)
   - Visual tic marks with 12-hour AM/PM format
   - Maroon/white gradient track
-- **🎨 Theme Selector**: Toggle between Normal and Dark Mode
+- **Theme Selector**: Toggle between Normal and Dark Mode
   - Reduces eye strain in low-light environments
   - Inverted dark theme with smart UI preservation
-- **ℹ️ Info Button**: Accessible help modal with usage instructions
+- **Info Button**: Accessible help modal with usage instructions
 - Real-time data filtering and updates
 
-### 🎨 Visual Design
-- **📡 CRASHCourse Banner**: Animated top banner with bounce entrance effect
+### Visual Design
+- **CRASHCourse Banner**: Animated top banner with bounce entrance effect
 - **Pulsating Animation**: Hotspot markers pulse to indicate high-traffic areas
-  - ⚠️ **Important**: Animation targets inner SVG `<path>` to avoid Leaflet positioning conflicts
+- **Important**: Animation targets inner SVG `<path>` to avoid Leaflet positioning conflicts
 - **Dynamic Sizing**: Hotspot size scales with congestion level
 - **Color Coding**: Green for buildings, red for congestion alerts, orange for collision reports
 - **Theme Support**: Normal (light) and Dark Mode themes
 - **Responsive UI**: Works on desktop and mobile devices
 
-### 🗺️ Map Features
+### Map Features
 - Zoom and pan controls
 - Click markers for detailed information
 - **Interactive collision reporting** - Click anywhere on the map to report incidents
@@ -59,7 +59,7 @@ npm run dev
   - Collision report details
 - **Miss Rev mascot animations** - Adorable animated icons watching over collision sites
 
-## 📊 Data Visualization
+## Data Visualization
 
 ### Building Layer
 - **Marker Type**: CircleMarker
@@ -74,7 +74,7 @@ npm run dev
 - **Animation**: 2-second pulse cycle
 - **Data**: Major congestion zones and clusters
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 Howdy_Hack/
@@ -94,7 +94,7 @@ Howdy_Hack/
 └── README.md                  # This file
 ```
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Node.js v16 or higher
@@ -126,7 +126,7 @@ Howdy_Hack/
    http://localhost:3000
    ```
 
-## 🎯 Usage
+## Usage
 
 ### Basic Usage
 Simply open the application and use the controls to filter by day and time. The map will automatically update to show:
@@ -135,11 +135,11 @@ Simply open the application and use the controls to filter by day and time. The 
 - Miss Rev icons for user-reported collision sites
 
 ### Interacting with the Map
-1. **Get Help**: Click the ℹ️ info button (top left) for detailed instructions
-2. **Choose Theme**: Use the 🎨 Theme selector (top right) to toggle Normal/Dark Mode
+1. **Get Help**: Click the info button (top left) for detailed instructions
+2. **Choose Theme**: Use the Theme selector (top right) to toggle Normal/Dark Mode
 3. **Select Day**: Use the day dropdown in the control panel
 4. **Navigate Time**: Use the Skater-Slider to slide through time slots (Miss Rev moves along the track!)
-5. **Report Collisions**: Click "Report Collision 🚨" then click anywhere on the map to mark a hazard
+5. **Report Collisions**: Click "Report Collision" then click anywhere on the map to mark a hazard
 6. **View Details**: Click any marker to see detailed information
 7. **Hover Miss Rev**: Hover over Miss Rev collision icons to zoom in and see details
 8. **REV-solve**: Click a Miss Rev marker and use the "REV-solve Collision" button to clear it
@@ -171,7 +171,7 @@ Simply open the application and use the controls to filter by day and time. The 
 }
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Change Map Center/Zoom
 Edit `components/AggieFlowMap.jsx`:
@@ -211,7 +211,7 @@ pathOptions={{
 }}
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 14.0
 - **UI Library**: React 18.2
@@ -219,15 +219,15 @@ pathOptions={{
 - **Styling**: CSS-in-JS (styled-jsx) + CSS Modules
 - **Data Format**: JSON
 
-## 📱 Browser Support
+## Browser Support
 
-- ✅ Chrome (recommended)
-- ✅ Firefox
-- ✅ Safari
-- ✅ Edge
-- ✅ Mobile browsers
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+- Mobile browsers
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Map not displaying
 - Ensure Leaflet CSS is imported
@@ -258,7 +258,7 @@ pathOptions={{
   - Building data: ~130k tokens
   - Hotspot data: ~900 entries
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] Marker clustering for dense areas
 - [ ] Heatmap layer option
@@ -279,15 +279,15 @@ pathOptions={{
 - [React Leaflet Docs](https://react-leaflet.js.org/)
 - [Next.js Docs](https://nextjs.org/docs)
 
-## 🤝 Contributing
+## Contributing
 
 This is our HowdyHack 25' project. Feel free to fork and modify for your own use!
 
-## 📝 License
+## License
 
 MIT License - See LICENSE file for details
 
-## 🎓 About
+## About
 
 Built for visualizing campus traffic patterns at Texas A&M University. This tool helps students, faculty, and administrators understand building utilization and congestion patterns throughout the week.
 
