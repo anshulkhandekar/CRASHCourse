@@ -291,7 +291,7 @@ MIT License - See LICENSE file for details
 
 Built for visualizing campus traffic patterns at Texas A&M University. This tool helps students, faculty, and administrators understand building utilization and congestion patterns throughout the week.
 
-**Developed with ❤️ by the Anshul & Aldric**
+**Developed with ❤️ by Anshul & Aldric**
 
 ---
 
